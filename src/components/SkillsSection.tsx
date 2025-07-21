@@ -95,7 +95,7 @@ const SkillsSection = () => {
                 >
                   <div className="text-center">
                     <div className="flex items-center justify-center h-12 mb-2 text-4xl group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8" />
+                      <IconComponent size="40" />
                     </div>
                     <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                       {skill.name}

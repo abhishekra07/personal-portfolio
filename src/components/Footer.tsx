@@ -1,24 +1,26 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Mail, Heart } from 'lucide-react';
+import { portfolioData } from '@/data/portfolio';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      icon: Github,
-      href: "#",
-      label: "GitHub"
+      icon: FaGithub,
+      href: portfolioData.social.github,
+      label: 'GitHub',
     },
     {
-      icon: Linkedin,
-      href: "#",
-      label: "LinkedIn"
+      icon: FaLinkedin,
+      href: portfolioData.social.linkedin,
+      label: 'LinkedIn',
     },
     {
       icon: Mail,
-      href: "mailto:your.email@example.com",
-      label: "Email"
-    }
+      href: `mailto:${portfolioData.personal.email}`,
+      label: 'Email',
+    },
   ];
 
   return (
@@ -50,7 +52,8 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60 flex items-center justify-center gap-2">
-            © {currentYear} Made with <Heart className="h-4 w-4 text-red-400" /> by Your Name
+            © {currentYear} Made with <Heart className="h-4 w-4 text-red-400" />{' '}
+            by {portfolioData.personal.name}
           </p>
         </div>
       </div>

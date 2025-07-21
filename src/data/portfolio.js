@@ -1,55 +1,36 @@
-import {
-  // Backend
-  SiSpringboot,
-  SiSpringsecurity,
-  SiMicrodotblog, // closest to Microservices
-  SiApollographql,
-  SiApachekafka,
-  SiRedis,
-  SiApachemaven,
-  SiGradle,
-  SiJunit5,
-
-  // Frontend
-  SiReact,
-  SiAngular,
-  SiVuedotjs,
-  SiTypescript,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiBootstrap,
-  SiWebpack,
-  SiVite,
-  SiNpm,
-  SiYarn,
-
-  // Database
-  SiPostgresql,
-  SiMysql,
-  SiMongodb,
-  SiElasticsearch,
-  SiSqlite,
-  SiDatabricks, // for Data Modeling
-  SiCodefactor, // for Query Optimization (approx)
-  SiInfracost, // for Database Design (approx)
-  SiHatenabookmark, // for H2 (fallback)
-
-  // DevOps & Tools
-  SiDocker,
-  SiKubernetes,
-  SiJenkins,
-  SiGit,
-  SiGithubactions,
-  SiSonarqube,
-  SiPostman,
-  SiIntellijidea,
-  SiLinux,
-  SiGnubash,
-} from 'react-icons/si';
-import { FaAws, FaJava } from 'react-icons/fa';
-import { DiVisualstudio } from 'react-icons/di';
+import JavaOriginal from 'devicons-react/icons/JavaOriginal';
+import SpringOriginal from 'devicons-react/icons/SpringOriginal';
+import ReactOriginal from 'devicons-react/icons/ReactOriginal';
+import AngularOriginal from 'devicons-react/icons/AngularOriginal';
+import VuejsOriginal from 'devicons-react/icons/VuejsOriginal';
+import NpmOriginalWordmark from 'devicons-react/icons/NpmOriginalWordmark';
+import ApachekafkaOriginal from 'devicons-react/icons/ApachekafkaOriginal';
+import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal';
+import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal';
+import Html5Original from 'devicons-react/icons/Html5Original';
+import Css3Original from 'devicons-react/icons/Css3Original';
+import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
+import BootstrapOriginal from 'devicons-react/icons/BootstrapOriginal';
+import WebpackOriginal from 'devicons-react/icons/WebpackOriginal';
+import VitejsOriginal from 'devicons-react/icons/VitejsOriginal';
+import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal';
+import MysqlOriginal from 'devicons-react/icons/MysqlOriginal';
+import MongodbOriginal from 'devicons-react/icons/MongodbOriginal';
+import RedisOriginal from 'devicons-react/icons/RedisOriginal';
+import ElasticsearchOriginal from 'devicons-react/icons/ElasticsearchOriginal';
+import DockerOriginal from 'devicons-react/icons/DockerOriginal';
+import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal';
+import JenkinsOriginal from 'devicons-react/icons/JenkinsOriginal';
+import GitOriginal from 'devicons-react/icons/GitOriginal';
+import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal';
+import SonarqubeOriginal from 'devicons-react/icons/SonarqubeOriginal';
+import PostmanOriginal from 'devicons-react/icons/PostmanOriginal';
+import IntellijOriginal from 'devicons-react/icons/IntellijOriginal';
+import MavenOriginal from 'devicons-react/icons/MavenOriginal';
+import JunitOriginal from 'devicons-react/icons/JunitOriginal';
+import AmazonwebservicesOriginalWordmark from 'devicons-react/icons/AmazonwebservicesOriginalWordmark';
+import LinuxOriginal from 'devicons-react/icons/LinuxOriginal';
+import BashOriginal from 'devicons-react/icons/BashOriginal';
 
 // Portfolio Configuration Data
 export const portfolioData = {
@@ -59,76 +40,72 @@ export const portfolioData = {
     title: 'Software Developer',
     tagline:
       'Specializing in backend development with Java, Spring Boot, and modern cloud technologies. Building scalable, efficient solutions that power great user experiences.',
-    location: 'India',
-    email: 'abhishek.rathore@example.com',
+    location: 'india',
+    email: 'abhira719@gmail.com',
     phone: '+91 9876543210',
     resumeFileName: 'Abhishek-Rathore-Resume',
   },
 
   // Social Links
   social: {
-    github: 'https://github.com/abhishek-rathore',
-    linkedin: 'https://linkedin.com/in/abhishek-rathore',
-    email: 'mailto:abhishek.rathore@example.com',
+    github: 'https://github.com/abhishekra07',
+    linkedin: 'www.linkedin.com/in/abhishek-rathore-666972127',
+    email: 'mailto:abhira719@gmail.com',
     portfolio: 'https://abhishek-rathore.dev',
   },
 
   // Technical Skills
   skills: {
     backend: [
-      { name: 'Java', icon: FaJava },
-      { name: 'Spring Boot', icon: SiSpringboot },
-      { name: 'Spring Security', icon: SiSpringsecurity },
-      { name: 'Microservices', icon: SiMicrodotblog },
-      { name: 'RESTful APIs', icon: SiApollographql }, // closest alternative
-      { name: 'GraphQL', icon: SiApollographql },
-      { name: 'Apache Kafka', icon: SiApachekafka },
-      { name: 'Redis', icon: SiRedis },
-      { name: 'Maven', icon: SiApachemaven },
-      { name: 'Gradle', icon: SiGradle },
-      { name: 'JUnit', icon: SiJunit5 },
-      { name: 'Mockito', icon: SiJunit5 },
+      { name: 'Java', icon: JavaOriginal },
+      { name: 'Spring Boot', icon: SpringOriginal },
+      { name: 'Spring Security', icon: SpringOriginal },
+      { name: 'Microservices', icon: SpringOriginal },
+      { name: 'RESTful APIs', icon: PostmanOriginal },
+      { name: 'Apache Kafka', icon: ApachekafkaOriginal },
+      { name: 'Redis', icon: RedisOriginal },
+      { name: 'Maven', icon: MavenOriginal },
+      { name: 'JUnit', icon: JunitOriginal },
+      { name: 'Mockito', icon: JunitOriginal },
     ],
     frontend: [
-      { name: 'React', icon: SiReact },
-      { name: 'Angular', icon: SiAngular },
-      { name: 'Vue.js', icon: SiVuedotjs },
-      { name: 'TypeScript', icon: SiTypescript },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'HTML5', icon: SiHtml5 },
-      { name: 'CSS3', icon: SiCss3 },
-      { name: 'Tailwind CSS', icon: SiTailwindcss },
-      { name: 'Bootstrap', icon: SiBootstrap },
-      { name: 'Webpack', icon: SiWebpack },
-      { name: 'Vite', icon: SiVite },
-      { name: 'npm', icon: SiNpm },
-      { name: 'yarn', icon: SiYarn },
+      { name: 'React', icon: ReactOriginal },
+      { name: 'Angular', icon: AngularOriginal },
+      { name: 'Vue.js', icon: VuejsOriginal },
+      { name: 'TypeScript', icon: TypescriptOriginal },
+      { name: 'JavaScript', icon: JavascriptOriginal },
+      { name: 'HTML5', icon: Html5Original },
+      { name: 'CSS3', icon: Css3Original },
+      { name: 'Tailwind CSS', icon: TailwindcssOriginal },
+      { name: 'Bootstrap', icon: BootstrapOriginal },
+      { name: 'Webpack', icon: WebpackOriginal },
+      { name: 'Vite', icon: VitejsOriginal },
+      { name: 'npm', icon: NpmOriginalWordmark },
     ],
     database: [
-      { name: 'PostgreSQL', icon: SiPostgresql },
-      { name: 'MySQL', icon: SiMysql },
-      { name: 'MongoDB', icon: SiMongodb },
-      { name: 'Redis', icon: SiRedis },
-      { name: 'Elasticsearch', icon: SiElasticsearch },
-      { name: 'H2', icon: SiHatenabookmark }, // closest substitute
-      { name: 'SQLite', icon: SiSqlite },
-      { name: 'Database Design', icon: SiInfracost }, // design/infra related
-      { name: 'Query Optimization', icon: SiCodefactor }, // code optimization proxy
-      { name: 'Data Modeling', icon: SiDatabricks },
+      { name: 'PostgreSQL', icon: PostgresqlOriginal },
+      { name: 'MySQL', icon: MysqlOriginal },
+      { name: 'MongoDB', icon: MongodbOriginal },
+      { name: 'Redis', icon: RedisOriginal },
+      { name: 'Elasticsearch', icon: ElasticsearchOriginal },
+      { name: 'H2', icon: MysqlOriginal }, // fallback
+      { name: 'Database Design', icon: MongodbOriginal }, // proxy
+      { name: 'Query Optimization', icon: PostgresqlOriginal },
+      { name: 'Data Modeling', icon: MongodbOriginal },
     ],
     devops: [
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Kubernetes', icon: SiKubernetes },
-      { name: 'AWS', icon: FaAws },
-      { name: 'Jenkins', icon: SiJenkins },
-      { name: 'Git', icon: SiGit },
-      { name: 'GitHub Actions', icon: SiGithubactions },
-      { name: 'SonarQube', icon: SiSonarqube },
-      { name: 'Postman', icon: SiPostman },
-      { name: 'IntelliJ IDEA', icon: SiIntellijidea },
-      { name: 'VS Code', icon: DiVisualstudio },
-      { name: 'Linux', icon: SiLinux },
-      { name: 'Bash', icon: SiGnubash },
+      { name: 'Docker', icon: DockerOriginal },
+      { name: 'Kubernetes', icon: KubernetesOriginal },
+      { name: 'AWS', icon: AmazonwebservicesOriginalWordmark },
+      { name: 'Jenkins', icon: JenkinsOriginal },
+      { name: 'Git', icon: GitOriginal },
+      { name: 'GitHub Actions', icon: GithubactionsOriginal },
+      { name: 'SonarQube', icon: SonarqubeOriginal },
+      { name: 'Postman', icon: PostmanOriginal },
+      { name: 'IntelliJ IDEA', icon: IntellijOriginal },
+      { name: 'VS Code', icon: IntellijOriginal }, // fallback
+      { name: 'Linux', icon: LinuxOriginal },
+      { name: 'Bash', icon: BashOriginal },
     ],
   },
 

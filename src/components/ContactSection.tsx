@@ -1,26 +1,29 @@
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, Download } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { portfolioData } from '@/data/portfolio';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -31,10 +34,10 @@ const ContactSection = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message Sent!",
+        title: 'Message Sent!',
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -42,22 +45,22 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: "Email",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com"
+      label: 'Email',
+      value: portfolioData.personal.email,
+      href: 'mailto:your.email@example.com',
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      label: 'Phone',
+      value: portfolioData.personal.phone,
+      href: `tel:${portfolioData.personal.phone}`,
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "Your City, Country",
-      href: "#"
-    }
+      label: 'Location',
+      value: 'Indore (M.P.), India',
+      href: '#',
+    },
   ];
 
   return (
@@ -68,7 +71,8 @@ const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to work together? I'd love to hear about your project and discuss how I can help bring your ideas to life.
+            Ready to work together? I'd love to hear about your project and
+            discuss how I can help bring your ideas to life.
           </p>
         </div>
 
@@ -80,9 +84,10 @@ const ContactSection = () => {
                 Let's Start a Conversation
               </h3>
               <p className="text-muted-foreground mb-8">
-                Whether you're looking for a backend developer to build robust APIs, 
-                need help with system architecture, or want to discuss a full-stack project, 
-                I'm here to help. Let's explore how we can work together to create something amazing.
+                Whether you're looking for a backend developer to build robust
+                APIs, need help with system architecture, or want to discuss a
+                full-stack project, I'm here to help. Let's explore how we can
+                work together to create something amazing.
               </p>
             </div>
 
@@ -93,8 +98,10 @@ const ContactSection = () => {
                     <info.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <a 
+                    <p className="text-sm text-muted-foreground">
+                      {info.label}
+                    </p>
+                    <a
                       href={info.href}
                       className="text-foreground hover:text-primary transition-colors duration-200"
                     >
@@ -116,7 +123,9 @@ const ContactSection = () => {
           {/* Contact Form */}
           <Card className="shadow-medium">
             <CardHeader>
-              <CardTitle className="text-xl font-semibold">Send a Message</CardTitle>
+              <CardTitle className="text-xl font-semibold">
+                Send a Message
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -171,14 +180,14 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   disabled={isSubmitting}
                   className="w-full"
                 >
                   {isSubmitting ? (
-                    "Sending..."
+                    'Sending...'
                   ) : (
                     <>
                       <Send className="mr-2 h-4 w-4" />
