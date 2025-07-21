@@ -1,87 +1,91 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Server, Globe, Database, Settings } from "lucide-react";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { portfolioData } from "@/data/portfolio";
 
 const SkillsSection = () => {
-  const skillCategories = [
-    {
-      icon: Server,
-      title: "Backend Development",
-      skills: [
-        "Java", "Spring Boot", "Spring Security", "Microservices",
-        "RESTful APIs", "GraphQL", "Apache Kafka", "Redis",
-        "Maven", "Gradle", "JUnit", "Mockito"
-      ]
-    },
-    {
-      icon: Globe,
-      title: "Frontend Development",
-      skills: [
-        "React", "Angular", "Vue.js", "TypeScript", "JavaScript",
-        "HTML5", "CSS3", "Tailwind CSS", "Bootstrap",
-        "Webpack", "Vite", "npm", "yarn"
-      ]
-    },
-    {
-      icon: Database,
-      title: "Databases & Storage",
-      skills: [
-        "PostgreSQL", "MySQL", "MongoDB", "Redis",
-        "Elasticsearch", "H2", "SQLite",
-        "Database Design", "Query Optimization", "Data Modeling"
-      ]
-    },
-    {
-      icon: Settings,
-      title: "DevOps & Tools",
-      skills: [
-        "Docker", "Kubernetes", "AWS", "Jenkins",
-        "Git", "GitHub Actions", "SonarQube", "Postman",
-        "IntelliJ IDEA", "VS Code", "Linux", "Bash"
-      ]
-    }
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  
+  const categories = [
+    { id: "all", label: "All", count: Object.values(portfolioData.skills).flat().length },
+    { id: "backend", label: "Backend", count: portfolioData.skills.backend.length },
+    { id: "frontend", label: "Frontend", count: portfolioData.skills.frontend.length },
+    { id: "database", label: "Database", count: portfolioData.skills.database.length },
+    { id: "devops", label: "DevOps", count: portfolioData.skills.devops.length },
   ];
 
+  const getFilteredSkills = () => {
+    if (activeCategory === "all") {
+      return Object.values(portfolioData.skills).flat();
+    }
+    return portfolioData.skills[activeCategory as keyof typeof portfolioData.skills] || [];
+  };
+
+  const filteredSkills = getFilteredSkills();
+
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-gradient-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in">
             Technical Skills
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in animation-delay-200">
             Technologies and tools I use to build robust, scalable applications
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title} 
-              className="group hover:shadow-medium transition-all duration-300 animate-fade-in border-border"
-              style={{ animationDelay: `${index * 150}ms` }}
+        {/* Category Filter Badges */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in animation-delay-400">
+          {categories.map((category) => (
+            <Badge
+              key={category.id}
+              variant={activeCategory === category.id ? "default" : "secondary"}
+              className={`
+                px-6 py-2 text-sm font-medium cursor-pointer transition-all duration-300 hover:scale-105
+                ${activeCategory === category.id 
+                  ? "bg-primary text-primary-foreground shadow-colored" 
+                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                }
+              `}
+              onClick={() => setActiveCategory(category.id)}
             >
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <category.icon className="h-8 w-8" />
-                </div>
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-sm bg-secondary text-secondary-foreground rounded-full hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              {category.label}
+              <span className="ml-2 px-2 py-0.5 text-xs rounded-full bg-current/20">
+                {category.count}
+              </span>
+            </Badge>
           ))}
+        </div>
+
+        {/* Skills Grid */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {filteredSkills.map((skill, index) => (
+              <div
+                key={skill.name}
+                className="group p-4 bg-card border border-border rounded-lg hover:shadow-medium transition-all duration-300 hover:scale-105 hover:border-primary/50 animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="text-center">
+                  <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {skill.icon}
+                  </div>
+                  <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Summary */}
+        <div className="mt-16 text-center animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full">
+            <span className="text-primary font-medium">
+              {filteredSkills.length} {activeCategory === "all" ? "Total" : categories.find(c => c.id === activeCategory)?.label} Skills
+            </span>
+          </div>
         </div>
       </div>
     </section>

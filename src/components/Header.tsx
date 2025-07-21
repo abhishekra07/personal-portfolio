@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { downloadResume } from "@/utils/resumeDownload";
+import { portfolioData } from "@/data/portfolio";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,22 +44,24 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-primary">
-            Portfolio
+          <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            {portfolioData.personal.name.split(' ')[0]}
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className="text-foreground hover:text-primary transition-colors duration-200 relative group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button variant="outline" size="sm">
+            <ThemeToggle />
+            <Button variant="outline" size="sm" onClick={downloadResume}>
               Download Resume
             </Button>
           </nav>
@@ -83,9 +88,12 @@ const Header = () => {
                   {item.label}
                 </button>
               ))}
-              <Button variant="outline" size="sm" className="self-start">
-                Download Resume
-              </Button>
+              <div className="flex items-center gap-3 pt-2">
+                <ThemeToggle />
+                <Button variant="outline" size="sm" onClick={downloadResume} className="flex-1">
+                  Download Resume
+                </Button>
+              </div>
             </div>
           </nav>
         )}

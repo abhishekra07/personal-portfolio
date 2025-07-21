@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { portfolioData } from "@/data/portfolio";
+import { downloadResume } from "@/utils/resumeDownload";
 
 const HeroSection = () => {
   const scrollToSection = (href: string) => {
@@ -15,11 +17,10 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Software Developer
+              {portfolioData.personal.title}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 leading-relaxed">
-              Specializing in backend development with Java, Spring Boot, and modern cloud technologies. 
-              Building scalable, efficient solutions that power great user experiences.
+              {portfolioData.personal.tagline}
             </p>
           </div>
 
@@ -37,6 +38,7 @@ const HeroSection = () => {
               size="lg" 
               variant="outline"
               className="bg-white/10 border-white/20 hover:bg-white/20 text-white"
+              onClick={downloadResume}
             >
               <Download className="mr-2 h-4 w-4" />
               Download Resume
@@ -45,22 +47,26 @@ const HeroSection = () => {
 
           <div className="animate-fade-in animation-delay-400 flex justify-center space-x-6">
             <a 
-              href="#" 
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              href={portfolioData.social.github}
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="GitHub"
             >
               <Github className="h-6 w-6" />
             </a>
             <a 
-              href="#" 
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              href={portfolioData.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
             </a>
             <a 
-              href="#" 
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              href={portfolioData.social.email}
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="Email"
             >
               <Mail className="h-6 w-6" />
