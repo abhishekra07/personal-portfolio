@@ -1,23 +1,47 @@
-import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { portfolioData } from "@/data/portfolio";
+import { useState } from 'react';
+import { Badge } from '@/components/ui/badge';
+import { portfolioData } from '@/data/portfolio';
 
 const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+
   const categories = [
-    { id: "all", label: "All", count: Object.values(portfolioData.skills).flat().length },
-    { id: "backend", label: "Backend", count: portfolioData.skills.backend.length },
-    { id: "frontend", label: "Frontend", count: portfolioData.skills.frontend.length },
-    { id: "database", label: "Database", count: portfolioData.skills.database.length },
-    { id: "devops", label: "DevOps", count: portfolioData.skills.devops.length },
+    {
+      id: 'all',
+      label: 'All',
+      count: Object.values(portfolioData.skills).flat().length,
+    },
+    {
+      id: 'backend',
+      label: 'Backend',
+      count: portfolioData.skills.backend.length,
+    },
+    {
+      id: 'frontend',
+      label: 'Frontend',
+      count: portfolioData.skills.frontend.length,
+    },
+    {
+      id: 'database',
+      label: 'Database',
+      count: portfolioData.skills.database.length,
+    },
+    {
+      id: 'devops',
+      label: 'DevOps',
+      count: portfolioData.skills.devops.length,
+    },
   ];
 
   const getFilteredSkills = () => {
-    if (activeCategory === "all") {
+    if (activeCategory === 'all') {
       return Object.values(portfolioData.skills).flat();
     }
-    return portfolioData.skills[activeCategory as keyof typeof portfolioData.skills] || [];
+    return (
+      portfolioData.skills[
+        activeCategory as keyof typeof portfolioData.skills
+      ] || []
+    );
   };
 
   const filteredSkills = getFilteredSkills();
@@ -39,12 +63,13 @@ const SkillsSection = () => {
           {categories.map((category) => (
             <Badge
               key={category.id}
-              variant={activeCategory === category.id ? "default" : "secondary"}
+              variant={activeCategory === category.id ? 'default' : 'secondary'}
               className={`
                 px-6 py-2 text-sm font-medium cursor-pointer transition-all duration-300 hover:scale-105
-                ${activeCategory === category.id 
-                  ? "bg-primary text-primary-foreground shadow-colored" 
-                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                ${
+                  activeCategory === category.id
+                    ? 'bg-primary text-primary-foreground shadow-colored'
+                    : 'bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground'
                 }
               `}
               onClick={() => setActiveCategory(category.id)}
@@ -60,22 +85,25 @@ const SkillsSection = () => {
         {/* Skills Grid */}
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {filteredSkills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="group p-4 bg-card border border-border rounded-lg hover:shadow-medium transition-all duration-300 hover:scale-105 hover:border-primary/50 animate-fade-in"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {skill.icon}
+            {filteredSkills.map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <div
+                  key={skill.name}
+                  className="group p-4 bg-card border border-border rounded-lg hover:shadow-medium transition-all duration-300 hover:scale-105 hover:border-primary/50 animate-fade-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="text-center">
+                    <div className="flex items-center justify-center h-12 mb-2 text-4xl group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {skill.name}
+                    </h3>
                   </div>
-                  <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-                    {skill.name}
-                  </h3>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -83,7 +111,11 @@ const SkillsSection = () => {
         <div className="mt-16 text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full">
             <span className="text-primary font-medium">
-              {filteredSkills.length} {activeCategory === "all" ? "Total" : categories.find(c => c.id === activeCategory)?.label} Skills
+              {filteredSkills.length}{' '}
+              {activeCategory === 'all'
+                ? 'Total'
+                : categories.find((c) => c.id === activeCategory)?.label}{' '}
+              Skills
             </span>
           </div>
         </div>
