@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { downloadResume } from "@/utils/resumeDownload";
-import { portfolioData } from "@/data/portfolio";
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { downloadResume } from '@/utils/resumeDownload';
+import { portfolioData } from '@/data/portfolio';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,11 +20,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#skills", label: "Skills" },
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: '#home', label: 'Home' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -36,16 +36,19 @@ const Header = () => {
   };
 
   return (
-    <header 
+    <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-soft" : "bg-transparent"
+        'fixed top-0 w-full z-50 transition-all duration-300',
+        isScrolled
+          ? 'bg-background/80 backdrop-blur-md shadow-soft'
+          : 'bg-transparent'
       )}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            {portfolioData.personal.name.split(' ')[0]}
+            {/* {portfolioData.personal.name.split(' ')[0]} */}
+            {portfolioData.personal.name}
           </div>
 
           {/* Desktop Navigation */}
@@ -90,7 +93,12 @@ const Header = () => {
               ))}
               <div className="flex items-center gap-3 pt-2">
                 <ThemeToggle />
-                <Button variant="outline" size="sm" onClick={downloadResume} className="flex-1">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={downloadResume}
+                  className="flex-1"
+                >
                   Download Resume
                 </Button>
               </div>
