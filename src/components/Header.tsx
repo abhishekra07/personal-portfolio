@@ -21,16 +21,24 @@ const Header = () => {
 
   const navItems = [
     { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
+    { href: '/blog', label: 'Blog', isExternal: true },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/')) {
+      // External route
+      window.location.href = href;
+    } else {
+      // Internal section
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -46,8 +54,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            {/* {portfolioData.personal.name.split(' ')[0]} */}
+          <div className={cn(
+            "text-xl font-bold transition-all duration-300",
+            isScrolled
+              ? "bg-gradient-primary bg-clip-text text-transparent"
+              : "text-white drop-shadow-lg"
+          )}>
             {portfolioData.personal.name}
           </div>
 
@@ -57,14 +69,30 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                className={cn(
+                  "transition-colors duration-200 relative group",
+                  isScrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-white/90 hover:text-white"
+                )}
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={cn(
+                  "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
+                  isScrolled ? "bg-primary" : "bg-white"
+                )}></span>
               </button>
             ))}
             <ThemeToggle />
-            <Button variant="outline" size="sm" onClick={downloadResume}>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={downloadResume}
+              className={cn(
+                "transition-all duration-300",
+                !isScrolled && "border-white/30 text-white hover:bg-white hover:text-foreground"
+              )}
+            >
               Download Resume
             </Button>
           </nav>

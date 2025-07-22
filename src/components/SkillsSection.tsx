@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
+import SkillsCarousel from '@/components/SkillsCarousel';
 import { portfolioData } from '@/data/portfolio';
 
 const SkillsSection = () => {
@@ -82,36 +83,16 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
+        {/* Skills Carousel */}
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {filteredSkills.map((skill, index) => {
-              const IconComponent = skill.icon;
-              return (
-                <div
-                  key={skill.name}
-                  className="group p-4 bg-card border border-border rounded-lg hover:shadow-medium transition-all duration-300 hover:scale-105 hover:border-primary/50 animate-fade-in"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="text-center">
-                    <div className="flex items-center justify-center h-12 mb-2 text-4xl group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent size="40" />
-                    </div>
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                      {skill.name}
-                    </h3>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <SkillsCarousel activeCategory={activeCategory} />
         </div>
 
         {/* Skills Summary */}
         <div className="mt-16 text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full">
             <span className="text-primary font-medium">
-              {filteredSkills.length}{' '}
+              {getFilteredSkills().length}{' '}
               {activeCategory === 'all'
                 ? 'Total'
                 : categories.find((c) => c.id === activeCategory)?.label}{' '}
