@@ -10,17 +10,13 @@ import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal';
 import Html5Original from 'devicons-react/icons/Html5Original';
 import Css3Original from 'devicons-react/icons/Css3Original';
 import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
-import BootstrapOriginal from 'devicons-react/icons/BootstrapOriginal';
-import WebpackOriginal from 'devicons-react/icons/WebpackOriginal';
 import VitejsOriginal from 'devicons-react/icons/VitejsOriginal';
 import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal';
 import MysqlOriginal from 'devicons-react/icons/MysqlOriginal';
 import MongodbOriginal from 'devicons-react/icons/MongodbOriginal';
 import RedisOriginal from 'devicons-react/icons/RedisOriginal';
-import ElasticsearchOriginal from 'devicons-react/icons/ElasticsearchOriginal';
 import DockerOriginal from 'devicons-react/icons/DockerOriginal';
 import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal';
-import JenkinsOriginal from 'devicons-react/icons/JenkinsOriginal';
 import GitOriginal from 'devicons-react/icons/GitOriginal';
 import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal';
 import SonarqubeOriginal from 'devicons-react/icons/SonarqubeOriginal';
@@ -29,8 +25,13 @@ import IntellijOriginal from 'devicons-react/icons/IntellijOriginal';
 import MavenOriginal from 'devicons-react/icons/MavenOriginal';
 import JunitOriginal from 'devicons-react/icons/JunitOriginal';
 import AmazonwebservicesOriginalWordmark from 'devicons-react/icons/AmazonwebservicesOriginalWordmark';
-import LinuxOriginal from 'devicons-react/icons/LinuxOriginal';
-import BashOriginal from 'devicons-react/icons/BashOriginal';
+import JqueryOriginal from 'devicons-react/icons/JqueryOriginal';
+import VscodeOriginal from 'devicons-react/icons/VscodeOriginal';
+import SocketioOriginal from 'devicons-react/icons/SocketioOriginal';
+import HibernateOriginal from 'devicons-react/icons/HibernateOriginal';
+import GooglecloudOriginal from 'devicons-react/icons/GooglecloudOriginal';
+
+import { Server, Database, Zap } from 'lucide-react';
 
 // Portfolio Configuration Data
 export const portfolioData = {
@@ -38,35 +39,61 @@ export const portfolioData = {
   personal: {
     name: 'Abhishek Rathore',
     title: 'Software Developer',
+    // tagline: 'Specializing in backend development with Java, Spring Boot, and modern cloud technologies. Building scalable, efficient solutions that power great user experiences.',
     tagline:
-      'Specializing in backend development with Java, Spring Boot, and modern cloud technologies. Building scalable, efficient solutions that power great user experiences.',
+      'Backend-focused developer specializing in Java, Spring Boot, and cloud-native architectures — building scalable systems that deliver real business value.',
+    // tagline: 'Specializing in Java and Spring Boot, I build reliable backend systems and cloud-native solutions that scale with business needs.',
+    // tagline: 'Engineer focused on Java-based backend systems, microservices, and cloud infrastructure — creating performant APIs and scalable business solutions.',
+    // tagline: 'Java backend developer building scalable APIs, microservices, and cloud-native solutions with Spring Boot.',
     location: 'india',
     email: 'abhira719@gmail.com',
-    phone: '+91 9876543210',
+    phone: '+91 8839705239',
     resumeFileName: 'Abhishek-Rathore-Resume',
+  },
+  // about: {
+  //   introduction:
+  //     "I'm a dedicated software developer with over 5 years of experience building scalable, efficient, and reliable backend systems. My journey began with a fascination for how distributed systems work, and today I specialize in designing enterprise-grade applications using Java, Spring Boot, Kafka, and cloud-native technologies.",
+  //   whatIDo:
+  //     "My expertise lies in backend development, microservices architecture, and performance optimization. I excel at crafting robust APIs, integrating with third-party systems, and enabling real-time data flows using event-driven patterns. Additionally, I’ve worked on frontend development using React and Vue, and have built DevOps pipelines for CI/CD, containerization, and cloud deployments on AWS and GCP.",
+  //   philosophy:
+  //     "I believe in writing clean, modular, and well-tested code that’s built to evolve. I'm a strong advocate for design patterns, code reusability, and automation. Whether it's test-driven development, debugging production issues, or leading architecture discussions — I focus on delivering long-term value through maintainability and performance.",
+  //   beyondCode:
+  //     "Outside of development, I enjoy exploring new frameworks, contributing to technical blogs, and mentoring junior developers. When I’m not immersed in code, I like hiking, experimenting with cooking, and following emerging trends in AI/ML and system design — keeping my perspective wide and fresh."
+  // },
+  about: {
+    introduction: `I'm a software engineer with over 5 years of hands-on experience building robust backend systems, scalable microservices, and efficient cloud-native applications. My expertise lies in Java, Spring Boot, RESTful APIs, and modern backend architecture. Having worked across mid-size product teams and agile enterprise environments, I enjoy solving real-world problems through clean, maintainable code.`,
+    whatIDo: `In my current role, I lead backend initiatives using Java, Spring Boot, Kafka, and PostgreSQL. I'm experienced in designing secure APIs, implementing microservices, and optimizing performance across systems serving thousands of users daily. I also have solid experience in Redis caching, Dockerized deployments, and CI/CD pipeline setup via Jenkins and GitHub Actions. On the frontend, I’ve worked with React, Angular, and TypeScript when needed.`,
+    philosophy: `I believe in writing code that’s built to last. I'm a strong proponent of clean code practices, meaningful reviews, and performance-first thinking. I regularly engage in refactoring, automated testing (JUnit/Mockito), and using metrics to guide performance improvements. For me, engineering is not just about writing code — it’s about building systems that are reliable, testable, and user-centric.`,
+    beyondCode: `Outside of work, I enjoy learning emerging tools and exploring how AI and LLMs are reshaping the software development landscape. I occasionally contribute to personal projects, technical blogs, and open-source when time permits. I'm also passionate about sharing knowledge and have mentored junior developers within teams. Beyond tech, I find balance through fitness, travel, and the occasional cricket match.`,
   },
 
   // Social Links
   social: {
     github: 'https://github.com/abhishekra07',
-    linkedin: 'www.linkedin.com/in/abhishek-rathore-666972127',
-    email: 'mailto:abhira719@gmail.com',
-    portfolio: 'https://abhishek-rathore.dev',
+    linkedin: 'https://www.linkedin.com/in/abhishek-rathore-666972127',
+    email: 'abhira719@gmail.com',
+    portfolio: 'https://abhishek-developer-portfolio.netlify.app/',
   },
 
   // Technical Skills
+  // Skills (refined for clarity)
   skills: {
     backend: [
       { name: 'Java', icon: JavaOriginal },
       { name: 'Spring Boot', icon: SpringOriginal },
       { name: 'Spring Security', icon: SpringOriginal },
+      { name: 'JPA/Hibernate', icon: HibernateOriginal },
       { name: 'Microservices', icon: SpringOriginal },
-      { name: 'RESTful APIs', icon: PostmanOriginal },
-      { name: 'Apache Kafka', icon: ApachekafkaOriginal },
+      { name: 'REST APIs', icon: PostmanOriginal },
+      { name: 'Kafka', icon: ApachekafkaOriginal },
       { name: 'Redis', icon: RedisOriginal },
+      { name: 'AWS', icon: AmazonwebservicesOriginalWordmark },
+      { name: 'GCP', icon: GooglecloudOriginal },
       { name: 'Maven', icon: MavenOriginal },
       { name: 'JUnit', icon: JunitOriginal },
-      { name: 'Mockito', icon: JunitOriginal },
+      { name: 'WebSocket', icon: SocketioOriginal },
+      { name: 'Node.js', icon: JavascriptOriginal },
+      { name: 'npm', icon: NpmOriginalWordmark },
     ],
     frontend: [
       { name: 'React', icon: ReactOriginal },
@@ -74,38 +101,28 @@ export const portfolioData = {
       { name: 'Vue.js', icon: VuejsOriginal },
       { name: 'TypeScript', icon: TypescriptOriginal },
       { name: 'JavaScript', icon: JavascriptOriginal },
+      { name: 'JQuery', icon: JqueryOriginal },
       { name: 'HTML5', icon: Html5Original },
       { name: 'CSS3', icon: Css3Original },
       { name: 'Tailwind CSS', icon: TailwindcssOriginal },
-      { name: 'Bootstrap', icon: BootstrapOriginal },
-      { name: 'Webpack', icon: WebpackOriginal },
       { name: 'Vite', icon: VitejsOriginal },
-      { name: 'npm', icon: NpmOriginalWordmark },
     ],
     database: [
-      { name: 'PostgreSQL', icon: PostgresqlOriginal },
       { name: 'MySQL', icon: MysqlOriginal },
+      { name: 'PostgreSQL', icon: PostgresqlOriginal },
       { name: 'MongoDB', icon: MongodbOriginal },
-      { name: 'Redis', icon: RedisOriginal },
-      { name: 'Elasticsearch', icon: ElasticsearchOriginal },
-      { name: 'H2', icon: MysqlOriginal }, // fallback
-      { name: 'Database Design', icon: MongodbOriginal }, // proxy
-      { name: 'Query Optimization', icon: PostgresqlOriginal },
-      { name: 'Data Modeling', icon: MongodbOriginal },
     ],
     devops: [
       { name: 'Docker', icon: DockerOriginal },
       { name: 'Kubernetes', icon: KubernetesOriginal },
-      { name: 'AWS', icon: AmazonwebservicesOriginalWordmark },
-      { name: 'Jenkins', icon: JenkinsOriginal },
       { name: 'Git', icon: GitOriginal },
       { name: 'GitHub Actions', icon: GithubactionsOriginal },
       { name: 'SonarQube', icon: SonarqubeOriginal },
-      { name: 'Postman', icon: PostmanOriginal },
+    ],
+    tools: [
       { name: 'IntelliJ IDEA', icon: IntellijOriginal },
-      { name: 'VS Code', icon: IntellijOriginal }, // fallback
-      { name: 'Linux', icon: LinuxOriginal },
-      { name: 'Bash', icon: BashOriginal },
+      { name: 'VS Code', icon: VscodeOriginal },
+      { name: 'Postman', icon: PostmanOriginal },
     ],
   },
 
@@ -113,175 +130,312 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      title: 'Senior Software Developer',
-      company: 'Tech Solutions Inc.',
-      location: 'Mumbai, India',
-      period: '2022 - Present',
+      title: 'Associate Staff Engineer',
+      company: 'Nagarro',
+      location: 'India',
+      period: 'Mar 2022 – Feb 2025',
       type: 'Full-time',
       description:
-        'Leading backend development initiatives and architecting scalable microservices solutions.',
+        'Led and contributed to multiple enterprise-level backend systems with a focus on microservices and distributed architecture.',
       responsibilities: [
-        'Designed and implemented microservices architecture serving 100k+ daily users',
-        'Led a team of 5 developers in delivering critical business features',
-        'Optimized database queries resulting in 40% performance improvement',
-        'Implemented CI/CD pipelines reducing deployment time by 60%',
+        'Designed and implemented automated cron jobs for calculating store-to-region distances daily, optimizing logistics and operational planning.',
+        'Conducted root cause analysis for critical defects and production issues, improving bug resolution speed and software stability.',
+        'Supported manual QA testing on the COP module, significantly contributing to the reduction of QA backlog and on-time release of features.',
+        'Architected and implemented feature-specific microservices, aligning with project goals and ensuring high availability and scalability.',
+        'Developed a shared utility library used across services, enhancing maintainability and reducing code duplication.',
+        'Integrated multi-language support across services, enabling seamless internationalization and localization.',
+        'Managed end-to-end communication protocols between client systems and the adapter application, improving system reliability and performance.',
       ],
       technologies: [
         'Java',
         'Spring Boot',
-        'PostgreSQL',
-        'Docker',
-        'AWS',
+        'Redis',
         'Kafka',
+        'Microservices',
+        'Git',
+        'CI/CD',
+        'JUnit',
       ],
     },
     {
       id: 2,
-      title: 'Software Developer',
-      company: 'Digital Innovations Pvt Ltd',
-      location: 'Bangalore, India',
-      period: '2020 - 2022',
+      title: 'Analyst',
+      company: 'Deloitte',
+      location: 'India',
+      period: 'Jul 2021 – Mar 2022',
       type: 'Full-time',
       description:
-        'Developed and maintained enterprise-level applications with focus on performance and scalability.',
+        'Worked on large-scale enterprise web applications and contributed to frontend and backend system optimization.',
       responsibilities: [
-        'Built RESTful APIs handling 50k+ requests per day',
-        'Integrated third-party payment gateways and services',
-        'Collaborated with frontend teams to deliver seamless user experiences',
-        'Participated in code reviews and mentored junior developers',
+        'Developed reusable web components using micro frontend architecture, reducing development effort by 60%.',
+        'Designed and implemented dynamic user interfaces that improved user engagement and responsiveness.',
+        'Refactored monolithic components into modular on-demand apps, improving load times by 30% and enhancing scalability.',
+        'Built reactive microservices with Spring Boot, deployed on PCF (Pivotal Cloud Foundry), ensuring fault-tolerant systems.',
+        'Collaborated in the debugging and resolution of Java code issues during the SDLC, improving development velocity.',
       ],
-      technologies: ['Java', 'Spring Framework', 'MySQL', 'Redis', 'Angular'],
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'React',
+        'PCF',
+        'Micro Frontends',
+        'Git',
+      ],
     },
     {
       id: 3,
-      title: 'Junior Developer',
-      company: 'StartupTech Solutions',
-      location: 'Pune, India',
-      period: '2019 - 2020',
+      title: 'System Engineer',
+      company: 'Tata Consultancy Services (TCS)',
+      location: 'India',
+      period: 'Jun 2019 – Mar 2021',
       type: 'Full-time',
       description:
-        'Started career focusing on full-stack development and learning modern development practices.',
+        'Contributed to the modernization and migration of legacy applications into scalable cloud-native architectures.',
       responsibilities: [
-        'Developed responsive web applications using React and Node.js',
-        'Participated in agile development processes',
-        'Wrote unit tests and maintained code documentation',
-        'Contributed to open-source projects and internal tools',
+        'Collaborated with architects to migrate a legacy pharmacy application to microservices hosted on Google Cloud App Engine.',
+        'Developed asynchronous data processing mechanisms for DB/network I/O, significantly improving system throughput and resilience.',
+        'Led a team of 6 developers to ensure the successful third-party service integration and migration.',
+        'Co-developed a Selenium-based test automation framework, reducing manual QA effort and increasing test coverage.',
       ],
-      technologies: ['JavaScript', 'React', 'Node.js', 'MongoDB', 'Express.js'],
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'GCP',
+        'Microservices',
+        'Selenium',
+        'Git',
+      ],
     },
   ],
 
   // Projects
   projects: [
     {
-      id: 1,
-      title: 'E-Commerce Microservices Platform',
+      id: 4,
+      title: 'Voice Assistant News App',
       description:
-        'A scalable e-commerce platform built with microservices architecture, handling user management, product catalog, orders, and payments.',
+        'A React-based voice-controlled news app using Alan AI for searching and reading news aloud.',
       longDescription:
-        'Designed and implemented a comprehensive e-commerce platform using microservices architecture. The system includes separate services for user authentication, product management, order processing, payment integration, and notification services. Implemented using Spring Boot, PostgreSQL, Redis for caching, and Apache Kafka for event-driven communication between services.',
-      images: [
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop'
+        'Users can use voice commands to interact with the app for reading news based on keywords, channels, or sources. Enhances accessibility and hands-free interaction using Alan AI voice assistant.',
+      images: [],
+      technologies: ['ReactJS', 'Alan AI', 'JavaScript'],
+      features: [
+        'Voice-controlled search',
+        'Live news updates',
+        'Accessible UI',
       ],
+      githubUrl: 'https://github.com/abhishekra07',
+      liveUrl: '',
+      status: 'Completed',
+    },
+    {
+      id: 5,
+      title: 'Income-Expense Tracker',
+      description:
+        'React-based app to track income and expenses with category-wise filtering and visual analysis.',
+      longDescription:
+        'The tracker supports adding income/expenses, categorizing them with hashtags, and shows ratio-based analysis using charts and modern UI components.',
+      images: [],
+      technologies: ['ReactJS', 'Material UI', 'JavaScript'],
+      features: [
+        'Category-based tracking',
+        'Hashtag tagging',
+        'Expense analysis UI',
+      ],
+      githubUrl: 'https://github.com/abhishekra07',
+      liveUrl: '',
+      status: 'Completed',
+    },
+    {
+      id: 6,
+      title: 'Wildfire Tracker',
+      description:
+        'A React app that integrates NASA EONET API to visualize wildfire data on Google Maps.',
+      longDescription:
+        'This real-time wildfire tracker fetches incident data using NASA EONET APIs and marks their geolocation on Google Maps to help users track wildfire spread.',
+      images: [],
+      technologies: ['ReactJS', 'Google Maps API', 'NASA EONET API'],
+      features: [
+        'Real-time wildfire data',
+        'Google Maps integration',
+        'Marker visualization',
+      ],
+      githubUrl: 'https://github.com/abhishekra07',
+      liveUrl: '',
+      status: 'Completed',
+    },
+    {
+      title: 'Simply Minds',
+      description:
+        'Inventory management system allowing users to manage, track, and analyze stock efficiently.',
+      images: [
+        '/projects/simply-minds-1.png',
+        '/projects/simply-minds-2.png',
+        '/projects/simply-minds-3.png',
+      ],
+      technologies: ['React', 'TypeScript'],
+      liveUrl: 'https://simply-minds.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/simply-minds',
+      features: [
+        'Inventory tracking',
+        'Real-time updates',
+        'Simple and intuitive UI',
+      ],
+    },
+    {
+      title: 'Logi Truck',
+      description:
+        'Logistics management platform designed to handle transportation fleet and operational tasks.',
+      images: [
+        '/projects/logi-truck-1.png',
+        '/projects/logi-truck-2.png',
+        '/projects/logi-truck-3.png',
+      ],
+      technologies: ['React'],
+      liveUrl: 'https://logi-track.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/transport-app',
+      features: ['Fleet tracking', 'Task scheduling', 'Freelancer-friendly UI'],
+    },
+    {
+      title: 'TeeCraft',
+      description:
+        'Interactive t-shirt designer that lets users add logos, stickers, and text, and download the final design.',
+      images: [
+        '/projects/tee-craft-1.png',
+        '/projects/tee-craft-2.png',
+        '/projects/tee-craft-3.png',
+        '/projects/tee-craft-4.png',
+      ],
+      technologies: ['React', 'Fabric.js'],
+      liveUrl: 'https://teecraft.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/tshirt-designer#',
+      features: [
+        'Drag-and-drop design tools',
+        'Sticker and text customization',
+        'Downloadable high-quality output',
+      ],
+    },
+  ],
+
+  //Backend Projects
+  backend: [
+    {
+      id: 'banking-api',
+      title: 'Banking API System',
+      description:
+        'Secure RESTful API for banking operations with transaction processing and account management.',
+      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
+      githubUrl: '#',
+      icon: Database,
+      expandedContent: {
+        overview:
+          'A comprehensive banking API system designed to handle high-volume financial transactions with enterprise-level security and compliance.',
+        responsibilities: [
+          'Architected microservices for account management, transactions, and notifications',
+          'Implemented JWT-based authentication with role-based access control',
+          'Designed database schema with proper indexing for optimal performance',
+          'Integrated with third-party payment gateways and fraud detection systems',
+        ],
+        approach:
+          'Built using Domain-Driven Design principles with CQRS pattern for separating read/write operations. Implemented event sourcing for audit trails and used Redis for caching frequently accessed data.',
+        challenges: [
+          'Ensuring ACID compliance for financial transactions',
+          'Implementing real-time fraud detection without impacting performance',
+          'Managing distributed transactions across microservices',
+        ],
+        outcome:
+          'Successfully processed over 1M transactions with 99.9% uptime and sub-200ms response times. Reduced operational costs by 30% through automated processes.',
+      },
+    },
+    {
+      id: 'event-streaming',
+      title: 'Event Streaming Platform',
+      description:
+        'High-throughput event streaming platform using Apache Kafka for real-time data processing.',
       technologies: [
         'Java',
         'Spring Boot',
-        'PostgreSQL',
-        'Redis',
         'Apache Kafka',
+        'MongoDB',
+        'Kubernetes',
+      ],
+      githubUrl: '#',
+      icon: Zap,
+      expandedContent: {
+        overview:
+          'A scalable event streaming platform designed to handle millions of events per second with guaranteed delivery and exactly-once processing semantics.',
+        responsibilities: [
+          'Designed event schema and partitioning strategy for optimal throughput',
+          'Implemented consumer groups with automatic failover and rebalancing',
+          'Built monitoring dashboard for tracking message lag and throughput',
+          'Created data pipeline for ETL operations and analytics',
+        ],
+        approach:
+          'Utilized Kafka Streams for stateful stream processing and implemented the Saga pattern for managing distributed transactions. Used Schema Registry for evolution of event schemas.',
+        challenges: [
+          'Handling backpressure during traffic spikes',
+          'Ensuring message ordering across partitions',
+          'Implementing exactly-once semantics without performance degradation',
+        ],
+        outcome:
+          'Platform processes 5M+ events daily with 99.99% availability. Reduced data processing latency from hours to seconds, enabling real-time business decisions.',
+      },
+    },
+    {
+      id: 'ml-pipeline',
+      title: 'ML Model Pipeline',
+      description:
+        'Automated machine learning pipeline for model training, validation, and deployment.',
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'Python',
         'Docker',
+        'Jenkins',
         'AWS',
       ],
-      features: [
-        'User authentication and authorization',
-        'Product catalog with search and filtering',
-        'Shopping cart and order management',
-        'Payment gateway integration',
-        'Real-time notifications',
-        'Admin dashboard for inventory management',
-      ],
-      githubUrl: 'https://github.com/abhishek-rathore/ecommerce-microservices',
-      liveUrl: 'https://ecommerce-demo.abhishek-rathore.dev',
-      status: 'Completed',
-    },
-    {
-      id: 2,
-      title: 'Real-time Chat Application',
-      description:
-        'A modern chat application with real-time messaging, file sharing, and group chat functionality built with React and WebSocket.',
-      longDescription:
-        'Developed a comprehensive chat application featuring real-time messaging using WebSocket connections. The application supports private messaging, group chats, file sharing, emoji reactions, and message history. Built with a responsive design that works seamlessly across desktop and mobile devices.',
-      images: [
-        'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=450&fit=crop'
-      ],
-      technologies: [
-        'React',
-        'Node.js',
-        'Socket.io',
-        'MongoDB',
-        'Express.js',
-        'Tailwind CSS',
-      ],
-      features: [
-        'Real-time messaging with WebSocket',
-        'Private and group chat rooms',
-        'File and image sharing',
-        'Message history and search',
-        'Online status indicators',
-        'Responsive mobile design',
-      ],
-      githubUrl: 'https://github.com/abhishek-rathore/realtime-chat',
-      liveUrl: 'https://chat-app.abhishek-rathore.dev',
-      status: 'Completed',
-    },
-    {
-      id: 3,
-      title: 'Task Management API',
-      description:
-        'RESTful API for task management with authentication, role-based access control, and real-time updates.',
-      longDescription:
-        'Built a robust task management API with comprehensive features including user authentication, role-based access control, task assignment, project management, and real-time notifications. The API follows REST principles and includes comprehensive documentation using Swagger/OpenAPI.',
-      images: [
-        'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop',
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=450&fit=crop'
-      ],
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'Spring Security',
-        'PostgreSQL',
-        'JWT',
-        'Swagger',
-      ],
-      features: [
-        'JWT-based authentication',
-        'Role-based access control (Admin, Manager, User)',
-        'Task CRUD operations with assignments',
-        'Project and team management',
-        'Real-time notifications',
-        'Comprehensive API documentation',
-      ],
-      githubUrl: 'https://github.com/abhishek-rathore/task-management-api',
-      liveUrl: 'https://api-docs.abhishek-rathore.dev',
-      status: 'Completed',
+      githubUrl: '#',
+      icon: Server,
+      expandedContent: {
+        overview:
+          'End-to-end machine learning pipeline that automates the entire ML lifecycle from data ingestion to model deployment and monitoring.',
+        responsibilities: [
+          'Built REST APIs for model inference with auto-scaling capabilities',
+          'Implemented data validation and preprocessing pipelines',
+          'Created model versioning and A/B testing framework',
+          'Designed monitoring system for model drift detection',
+        ],
+        approach:
+          'Adopted MLOps practices with CI/CD pipelines for model deployment. Used containerization for consistent environments and implemented blue-green deployment strategy.',
+        challenges: [
+          'Managing different model versions in production',
+          'Handling varying data schemas and feature engineering',
+          'Implementing real-time model performance monitoring',
+        ],
+        outcome:
+          'Reduced model deployment time from weeks to hours. Achieved 95% model accuracy with automated retraining when performance degrades.',
+      },
     },
   ],
 
   // Education
   education: [
     {
-      degree: 'Bachelor of Technology in Computer Science',
-      institution: 'Indian Institute of Technology',
-      location: 'Mumbai, India',
+      degree: 'Bachelor of Engineering in Electronics & Communication',
+      institution: 'Medicaps Institute of Technology & Management',
+      location: 'Indore, India',
       period: '2015 - 2019',
-      grade: '8.5 CGPA',
+      grade: '',
       description:
-        'Focused on software engineering, data structures, algorithms, and database management systems.',
+        'Focused on embedded systems, electronics fundamentals, and software development including Java and full-stack web technologies.',
+    },
+    {
+      degree: 'Class XII',
+      institution: 'Govt. Boys Higher Secondary School',
+      location: 'India',
+      period: '2014 - 2015',
+      grade: '',
+      description: 'Completed higher secondary education in science stream.',
     },
   ],
 
@@ -312,9 +466,10 @@ export const portfolioData = {
 export const blogData = [
   {
     id: 1,
-    title: 'AI in Today\'s World: Transforming Industries and Daily Life',
+    title: "AI in Today's World: Transforming Industries and Daily Life",
     slug: 'ai-in-todays-world',
-    excerpt: 'Exploring how artificial intelligence is revolutionizing various industries and becoming an integral part of our daily lives.',
+    excerpt:
+      'Exploring how artificial intelligence is revolutionizing various industries and becoming an integral part of our daily lives.',
     content: `
       <h2>The AI Revolution</h2>
       <p>Artificial Intelligence has moved from science fiction to reality, transforming how we work, live, and interact with technology. From recommendation algorithms on Netflix to autonomous vehicles, AI is everywhere.</p>
@@ -339,13 +494,15 @@ export const blogData = [
     readTime: '8 min read',
     likes: 245,
     views: 1250,
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop'
+    image:
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop',
   },
   {
     id: 2,
     title: 'Java for Beginners: Your Gateway to Programming',
     slug: 'java-for-beginners',
-    excerpt: 'A comprehensive guide to getting started with Java programming, covering fundamentals and best practices.',
+    excerpt:
+      'A comprehensive guide to getting started with Java programming, covering fundamentals and best practices.',
     content: `
       <h2>Why Choose Java?</h2>
       <p>Java remains one of the most popular programming languages, known for its "write once, run anywhere" philosophy. It's an excellent choice for beginners and professionals alike.</p>
@@ -375,13 +532,15 @@ export const blogData = [
     readTime: '12 min read',
     likes: 189,
     views: 980,
-    image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=450&fit=crop'
+    image:
+      'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=450&fit=crop',
   },
   {
     id: 3,
     title: 'Java Multithreading: Mastering Concurrent Programming',
     slug: 'java-multithreading-guide',
-    excerpt: 'Deep dive into Java multithreading concepts, best practices, and common pitfalls to avoid.',
+    excerpt:
+      'Deep dive into Java multithreading concepts, best practices, and common pitfalls to avoid.',
     content: `
       <h2>Understanding Multithreading</h2>
       <p>Multithreading is a powerful feature in Java that allows concurrent execution of multiple threads within a single program, enabling better resource utilization and improved performance.</p>
@@ -416,13 +575,15 @@ export const blogData = [
     readTime: '15 min read',
     likes: 156,
     views: 745,
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop'
+    image:
+      'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop',
   },
   {
     id: 4,
     title: 'Apache Kafka: Building Real-time Data Pipelines',
     slug: 'apache-kafka-guide',
-    excerpt: 'Learn how to use Apache Kafka for building robust, scalable real-time data streaming applications.',
+    excerpt:
+      'Learn how to use Apache Kafka for building robust, scalable real-time data streaming applications.',
     content: `
       <h2>What is Apache Kafka?</h2>
       <p>Apache Kafka is a distributed streaming platform that excels at handling real-time data feeds. It's designed to be fast, scalable, and fault-tolerant.</p>
@@ -463,13 +624,15 @@ export const blogData = [
     readTime: '10 min read',
     likes: 201,
     views: 1100,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop'
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
   },
   {
     id: 5,
     title: 'Modern Frontend Development with React and TypeScript',
     slug: 'modern-frontend-development',
-    excerpt: 'Exploring modern frontend development practices using React, TypeScript, and contemporary tooling.',
+    excerpt:
+      'Exploring modern frontend development practices using React, TypeScript, and contemporary tooling.',
     content: `
       <h2>The Modern Frontend Landscape</h2>
       <p>Frontend development has evolved significantly with the introduction of modern frameworks, tooling, and development practices that prioritize developer experience and application performance.</p>
@@ -506,13 +669,15 @@ export const blogData = [
     readTime: '9 min read',
     likes: 178,
     views: 892,
-    image: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&h=450&fit=crop'
+    image:
+      'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&h=450&fit=crop',
   },
   {
     id: 6,
     title: 'DevOps Best Practices: CI/CD with Docker and Kubernetes',
     slug: 'devops-best-practices',
-    excerpt: 'Implementing robust CI/CD pipelines using Docker containerization and Kubernetes orchestration.',
+    excerpt:
+      'Implementing robust CI/CD pipelines using Docker containerization and Kubernetes orchestration.',
     content: `
       <h2>DevOps in the Modern Era</h2>
       <p>DevOps practices have become essential for delivering software efficiently and reliably. Container technologies like Docker and orchestration platforms like Kubernetes are at the forefront of this transformation.</p>
@@ -555,8 +720,9 @@ export const blogData = [
     readTime: '13 min read',
     likes: 234,
     views: 1340,
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop'
-  }
+    image:
+      'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop',
+  },
 ];
 
 export default portfolioData;

@@ -78,7 +78,7 @@ const SkillsCarousel = ({ activeCategory }: SkillsCarouselProps) => {
     <div className="space-y-6">
       {/* Skills Grid */}
       <div className="relative">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 min-h-[300px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 min-h-[100px]">
           {currentSkills.map((skill, index) => {
             const IconComponent = skill.icon;
             return (
@@ -146,7 +146,9 @@ const SkillsCarousel = ({ activeCategory }: SkillsCarouselProps) => {
       {/* Page Info */}
       {totalPages > 1 && (
         <div className="text-center text-sm text-muted-foreground">
-          Showing {currentPage * skillsPerPage + 1}-{Math.min((currentPage + 1) * skillsPerPage, filteredSkills.length)} of {filteredSkills.length} skills
+          Showing {currentPage * skillsPerPage + 1}-
+          {Math.min((currentPage + 1) * skillsPerPage, filteredSkills.length)}{' '}
+          of {filteredSkills.length} skills
         </div>
       )}
     </div>

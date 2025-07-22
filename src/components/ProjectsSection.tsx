@@ -14,163 +14,10 @@ import {
   Zap,
 } from 'lucide-react';
 import ImageSlider from './ImageSlider';
+import { portfolioData } from '@/data/portfolio';
 
 const ProjectsSection = () => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
-
-  const frontendProjects = [
-    {
-      title: 'Simply Minds',
-      description:
-        'Inventory management system allowing users to manage, track, and analyze stock efficiently.',
-      images: [
-        '/projects/simply-minds-1.png',
-        '/projects/simply-minds-2.png',
-        '/projects/simply-minds-3.png',
-      ],
-      technologies: ['React', 'TypeScript'],
-      demoUrl: 'https://simply-minds.netlify.app/',
-      githubUrl: 'https://github.com/abhishekra07/simply-minds',
-      features: [
-        'Inventory tracking',
-        'Real-time updates',
-        'Simple and intuitive UI',
-      ],
-    },
-    {
-      title: 'Logi Truck',
-      description:
-        'Logistics management platform designed to handle transportation fleet and operational tasks.',
-      images: [
-        '/projects/logi-truck-1.png',
-        '/projects/logi-truck-2.png',
-        '/projects/logi-truck-3.png',
-      ],
-      technologies: ['React'],
-      demoUrl: 'https://logi-track.netlify.app/',
-      githubUrl: 'https://github.com/abhishekra07/transport-app',
-      features: ['Fleet tracking', 'Task scheduling', 'Freelancer-friendly UI'],
-    },
-    {
-      title: 'TeeCraft',
-      description:
-        'Interactive t-shirt designer that lets users add logos, stickers, and text, and download the final design.',
-      images: [
-        '/projects/tee-craft-1.png',
-        '/projects/tee-craft-2.png',
-        '/projects/tee-craft-3.png',
-        '/projects/tee-craft-4.png',
-      ],
-      technologies: ['React', 'Fabric.js'],
-      demoUrl: 'https://teecraft.netlify.app/',
-      githubUrl: 'https://github.com/abhishekra07/tshirt-designer#',
-      features: [
-        'Drag-and-drop design tools',
-        'Sticker and text customization',
-        'Downloadable high-quality output',
-      ],
-    },
-  ];
-
-  const backendProjects = [
-    {
-      id: 'banking-api',
-      title: 'Banking API System',
-      description:
-        'Secure RESTful API for banking operations with transaction processing and account management.',
-      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
-      githubUrl: '#',
-      icon: Database,
-      expandedContent: {
-        overview:
-          'A comprehensive banking API system designed to handle high-volume financial transactions with enterprise-level security and compliance.',
-        responsibilities: [
-          'Architected microservices for account management, transactions, and notifications',
-          'Implemented JWT-based authentication with role-based access control',
-          'Designed database schema with proper indexing for optimal performance',
-          'Integrated with third-party payment gateways and fraud detection systems',
-        ],
-        approach:
-          'Built using Domain-Driven Design principles with CQRS pattern for separating read/write operations. Implemented event sourcing for audit trails and used Redis for caching frequently accessed data.',
-        challenges: [
-          'Ensuring ACID compliance for financial transactions',
-          'Implementing real-time fraud detection without impacting performance',
-          'Managing distributed transactions across microservices',
-        ],
-        outcome:
-          'Successfully processed over 1M transactions with 99.9% uptime and sub-200ms response times. Reduced operational costs by 30% through automated processes.',
-      },
-    },
-    {
-      id: 'event-streaming',
-      title: 'Event Streaming Platform',
-      description:
-        'High-throughput event streaming platform using Apache Kafka for real-time data processing.',
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'Apache Kafka',
-        'MongoDB',
-        'Kubernetes',
-      ],
-      githubUrl: '#',
-      icon: Zap,
-      expandedContent: {
-        overview:
-          'A scalable event streaming platform designed to handle millions of events per second with guaranteed delivery and exactly-once processing semantics.',
-        responsibilities: [
-          'Designed event schema and partitioning strategy for optimal throughput',
-          'Implemented consumer groups with automatic failover and rebalancing',
-          'Built monitoring dashboard for tracking message lag and throughput',
-          'Created data pipeline for ETL operations and analytics',
-        ],
-        approach:
-          'Utilized Kafka Streams for stateful stream processing and implemented the Saga pattern for managing distributed transactions. Used Schema Registry for evolution of event schemas.',
-        challenges: [
-          'Handling backpressure during traffic spikes',
-          'Ensuring message ordering across partitions',
-          'Implementing exactly-once semantics without performance degradation',
-        ],
-        outcome:
-          'Platform processes 5M+ events daily with 99.99% availability. Reduced data processing latency from hours to seconds, enabling real-time business decisions.',
-      },
-    },
-    {
-      id: 'ml-pipeline',
-      title: 'ML Model Pipeline',
-      description:
-        'Automated machine learning pipeline for model training, validation, and deployment.',
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'Python',
-        'Docker',
-        'Jenkins',
-        'AWS',
-      ],
-      githubUrl: '#',
-      icon: Server,
-      expandedContent: {
-        overview:
-          'End-to-end machine learning pipeline that automates the entire ML lifecycle from data ingestion to model deployment and monitoring.',
-        responsibilities: [
-          'Built REST APIs for model inference with auto-scaling capabilities',
-          'Implemented data validation and preprocessing pipelines',
-          'Created model versioning and A/B testing framework',
-          'Designed monitoring system for model drift detection',
-        ],
-        approach:
-          'Adopted MLOps practices with CI/CD pipelines for model deployment. Used containerization for consistent environments and implemented blue-green deployment strategy.',
-        challenges: [
-          'Managing different model versions in production',
-          'Handling varying data schemas and feature engineering',
-          'Implementing real-time model performance monitoring',
-        ],
-        outcome:
-          'Reduced model deployment time from weeks to hours. Achieved 95% model accuracy with automated retraining when performance degrades.',
-      },
-    },
-  ];
 
   const toggleProject = (projectId: string) => {
     setExpandedProject(expandedProject === projectId ? null : projectId);
@@ -203,7 +50,7 @@ const ProjectsSection = () => {
 
           <TabsContent value="frontend">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {frontendProjects.map((project, index) => (
+              {portfolioData.projects.map((project, index) => (
                 <Card
                   key={project.title}
                   className="group hover:shadow-medium transition-all duration-300 animate-fade-in"
@@ -233,7 +80,7 @@ const ProjectsSection = () => {
                     <div className="flex gap-3">
                       <Button size="sm" variant="outline" asChild>
                         <a
-                          href={project.demoUrl}
+                          href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -260,7 +107,7 @@ const ProjectsSection = () => {
 
           <TabsContent value="backend">
             <div className="space-y-6">
-              {backendProjects.map((project, index) => (
+              {portfolioData.backend.map((project, index) => (
                 <Card
                   key={project.id}
                   className="hover:shadow-medium transition-all duration-300 animate-fade-in"

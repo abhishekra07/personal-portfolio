@@ -32,6 +32,11 @@ const SkillsSection = () => {
       label: 'DevOps',
       count: portfolioData.skills.devops.length,
     },
+    {
+      id: 'tools',
+      label: 'Tools',
+      count: portfolioData.skills.tools.length,
+    },
   ];
 
   const getFilteredSkills = () => {

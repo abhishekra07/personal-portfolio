@@ -11,7 +11,8 @@ const AboutSection = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in animation-delay-200">
-            Get to know more about my journey, passion, and what drives me as a developer
+            Get to know more about my journey, passion, and what drives me as a
+            developer
           </p>
         </div>
 
@@ -25,11 +26,7 @@ const AboutSection = () => {
                   Introduction
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I'm a passionate software developer with over 5 years of experience in building 
-                  scalable, efficient, and user-centric applications. My journey in technology began 
-                  with a curiosity about how things work behind the scenes, and it has evolved into 
-                  a deep expertise in backend development, cloud technologies, and modern software 
-                  architecture.
+                  {portfolioData.about.introduction}
                 </p>
               </div>
 
@@ -42,14 +39,7 @@ const AboutSection = () => {
                   What I Do
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  I specialize in backend development using Java and Spring Boot, creating robust 
-                  microservices architectures that can handle high-traffic loads. My expertise extends 
-                  to modern frontend frameworks, database optimization, and cloud infrastructure on AWS.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Whether it's designing RESTful APIs, implementing event-driven architectures with 
-                  Apache Kafka, or optimizing database performance, I enjoy solving complex technical 
-                  challenges that make a real difference for users and businesses.
+                  {portfolioData.about.whatIDo}
                 </p>
               </div>
 
@@ -62,10 +52,7 @@ const AboutSection = () => {
                   My Philosophy
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I believe in writing clean, maintainable code that not only works today but can 
-                  evolve with changing requirements. I'm a strong advocate for test-driven development, 
-                  continuous learning, and knowledge sharing. Every project is an opportunity to learn 
-                  something new and push the boundaries of what's possible.
+                  {portfolioData.about.philosophy}
                 </p>
               </div>
 
@@ -78,11 +65,7 @@ const AboutSection = () => {
                   Beyond Code
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to 
-                  open-source projects, or writing technical blogs to share knowledge with the 
-                  community. I also enjoy hiking, photography, and experimenting with new cooking 
-                  recipes - activities that help me maintain a creative mindset and fresh perspective 
-                  on problem-solving.
+                  {portfolioData.about.beyondCode}
                 </p>
               </div>
             </div>
