@@ -1,1 +1,1 @@
-# Welcome to Personla Portfolio
+# Welcome to Personal Portfolio
