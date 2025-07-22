@@ -20,31 +20,41 @@ const ProjectsSection = () => {
 
   const frontendProjects = [
     {
-      title: 'E-Commerce Dashboard',
+      title: 'Simply Minds',
       description:
-        'Modern admin dashboard for managing online store operations with real-time analytics.',
-      images: [
-        '/projects/Ecommerce-1.png',
-        '/projects/Ecommerce-2.png',
-        '/projects/Ecommerce-3.png',
+        'Inventory management system allowing users to manage, track, and analyze stock efficiently.',
+      images: ['/projects/simply-minds-1.png'],
+      technologies: ['React', 'TypeScript'],
+      demoUrl: 'https://simply-minds.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/simply-minds',
+      features: [
+        'Inventory tracking',
+        'Real-time updates',
+        'Simple and intuitive UI',
       ],
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
-      demoUrl: '#',
-      githubUrl: '#',
-      features: ['Real-time analytics', 'Responsive design', 'Dark/light mode'],
     },
     {
-      title: 'Task Management App',
+      title: 'Logi Truck',
       description:
-        'Collaborative task management tool with drag-and-drop interface and team features.',
-      images: ['/projects/Task-Manager-1.png', '/projects/Task-Manager-2.png'],
-      technologies: ['Vue.js', 'Vuetify', 'Socket.io', 'PWA'],
-      demoUrl: '#',
-      githubUrl: '#',
+        'Logistics management platform designed to handle transportation fleet and operational tasks.',
+      images: ['/projects/logi-truck-1.png'],
+      technologies: ['React'],
+      demoUrl: 'https://logi-track.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/transport-app',
+      features: ['Fleet tracking', 'Task scheduling', 'Freelancer-friendly UI'],
+    },
+    {
+      title: 'TeeCraft',
+      description:
+        'Interactive t-shirt designer that lets users add logos, stickers, and text, and download the final design.',
+      images: ['/projects/teecraft-1.png'],
+      technologies: ['React', 'Fabric.js'],
+      demoUrl: 'https://teecraft.netlify.app/',
+      githubUrl: 'https://github.com/abhishekra07/tshirt-designer#',
       features: [
-        'Real-time collaboration',
-        'Offline support',
-        'Mobile-first design',
+        'Drag-and-drop design tools',
+        'Sticker and text customization',
+        'Downloadable high-quality output',
       ],
     },
   ];
