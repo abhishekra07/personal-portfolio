@@ -23,7 +23,11 @@ const ProjectsSection = () => {
       title: 'Simply Minds',
       description:
         'Inventory management system allowing users to manage, track, and analyze stock efficiently.',
-      images: ['/projects/simply-minds-1.png'],
+      images: [
+        '/projects/simply-minds-1.png',
+        '/projects/simply-minds-2.png',
+        '/projects/simply-minds-3.png',
+      ],
       technologies: ['React', 'TypeScript'],
       demoUrl: 'https://simply-minds.netlify.app/',
       githubUrl: 'https://github.com/abhishekra07/simply-minds',
@@ -37,7 +41,11 @@ const ProjectsSection = () => {
       title: 'Logi Truck',
       description:
         'Logistics management platform designed to handle transportation fleet and operational tasks.',
-      images: ['/projects/logi-truck-1.png'],
+      images: [
+        '/projects/logi-truck-1.png',
+        '/projects/logi-truck-2.png',
+        '/projects/logi-truck-3.png',
+      ],
       technologies: ['React'],
       demoUrl: 'https://logi-track.netlify.app/',
       githubUrl: 'https://github.com/abhishekra07/transport-app',
@@ -47,7 +55,12 @@ const ProjectsSection = () => {
       title: 'TeeCraft',
       description:
         'Interactive t-shirt designer that lets users add logos, stickers, and text, and download the final design.',
-      images: ['/projects/teecraft-1.png'],
+      images: [
+        '/projects/tee-craft-1.png',
+        '/projects/tee-craft-2.png',
+        '/projects/tee-craft-3.png',
+        '/projects/tee-craft-4.png',
+      ],
       technologies: ['React', 'Fabric.js'],
       demoUrl: 'https://teecraft.netlify.app/',
       githubUrl: 'https://github.com/abhishekra07/tshirt-designer#',
