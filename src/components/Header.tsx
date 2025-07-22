@@ -54,12 +54,14 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className={cn(
-            "text-xl font-bold transition-all duration-300",
-            isScrolled
-              ? "bg-gradient-primary bg-clip-text text-transparent"
-              : "text-white drop-shadow-lg"
-          )}>
+          <div
+            className={cn(
+              'text-xl font-bold transition-all duration-300',
+              isScrolled
+                ? 'bg-gradient-primary bg-clip-text text-transparent'
+                : 'text-white drop-shadow-lg'
+            )}
+          >
             {portfolioData.personal.name}
           </div>
 
@@ -70,27 +72,30 @@ const Header = () => {
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
                 className={cn(
-                  "transition-colors duration-200 relative group",
+                  'transition-colors duration-200 relative group',
                   isScrolled
-                    ? "text-foreground hover:text-primary"
-                    : "text-white/90 hover:text-white"
+                    ? 'text-foreground hover:text-primary'
+                    : 'text-foreground hover:text-white'
                 )}
               >
                 {item.label}
-                <span className={cn(
-                  "absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
-                  isScrolled ? "bg-primary" : "bg-white"
-                )}></span>
+                <span
+                  className={cn(
+                    'absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
+                    isScrolled ? 'bg-primary' : 'bg-white'
+                  )}
+                ></span>
               </button>
             ))}
             <ThemeToggle />
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               onClick={downloadResume}
               className={cn(
-                "transition-all duration-300",
-                !isScrolled && "border-white/30 text-white hover:bg-white hover:text-foreground"
+                'transition-all duration-300',
+                !isScrolled &&
+                  'border-white/30 hover:bg-white hover:text-foreground'
               )}
             >
               Download Resume

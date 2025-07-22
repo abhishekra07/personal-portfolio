@@ -10,16 +10,15 @@ interface ImageSliderProps {
   className?: string;
 }
 
-const ImageSlider = ({ 
-  images, 
-  alt, 
-  autoSlideInterval = 5000, 
-  className 
+const ImageSlider = ({
+  images,
+  alt,
+  autoSlideInterval = 5000,
+  className,
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-slide functionality
   useEffect(() => {
     if (!isAutoPlaying || images.length <= 1) return;
 
@@ -33,7 +32,6 @@ const ImageSlider = ({
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
-    // Resume auto-play after user interaction
     setTimeout(() => setIsAutoPlaying(true), 3000);
   };
 
@@ -51,7 +49,12 @@ const ImageSlider = ({
 
   if (images.length === 0) {
     return (
-      <div className={cn("w-full h-48 bg-muted rounded-lg flex items-center justify-center", className)}>
+      <div
+        className={cn(
+          'w-full aspect-video bg-muted rounded-lg flex items-center justify-center',
+          className
+        )}
+      >
         <span className="text-muted-foreground">No images available</span>
       </div>
     );
@@ -59,28 +62,43 @@ const ImageSlider = ({
 
   if (images.length === 1) {
     return (
-      <div className={cn("relative w-full h-48 overflow-hidden rounded-lg", className)}>
-        <img
-          src={images[0]}
-          alt={alt}
-          className="w-full h-full object-cover"
-        />
+      <div
+        className={cn(
+          'relative w-full aspect-video overflow-hidden rounded-lg',
+          className
+        )}
+      >
+        <img src={images[0]} alt={alt} className="w-full h-full object-cover" />
       </div>
     );
   }
 
   return (
-    <div className={cn("relative w-full h-48 overflow-hidden rounded-lg group", className)}>
-      {/* Main Image */}
-      <div className="relative w-full h-full">
-        <img
-          src={images[currentIndex]}
-          alt={`${alt} - Image ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-opacity duration-500"
-          loading="lazy"
-        />
-        
-        {/* Gradient Overlay for better button visibility */}
+    <div
+      className={cn(
+        'relative w-full aspect-video overflow-hidden rounded-lg group',
+        className
+      )}
+    >
+      {/* Slider Container */}
+      <div className="relative w-full h-full overflow-hidden">
+        <div
+          className="flex w-full h-full transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((img, index) => (
+            <div key={index} className="w-full h-full flex-shrink-0">
+              <img
+                src={img}
+                alt={`${alt} - Slide ${index + 1}`}
+                className="w-full h-full object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
@@ -93,7 +111,7 @@ const ImageSlider = ({
       >
         <ChevronLeft size={16} />
       </Button>
-      
+
       <Button
         variant="outline"
         size="icon"
@@ -103,31 +121,34 @@ const ImageSlider = ({
         <ChevronRight size={16} />
       </Button>
 
-      {/* Dots Indicator */}
+      {/* Dots */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={cn(
-              "w-2 h-2 rounded-full transition-all duration-300",
+              'w-2 h-2 rounded-full transition-all duration-300',
               currentIndex === index
-                ? "bg-white shadow-md scale-110"
-                : "bg-white/50 hover:bg-white/75"
+                ? 'bg-white shadow-md scale-110'
+                : 'bg-white/50 hover:bg-white/75'
             )}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Auto-play indicator */}
+      {/* Auto-play Indicator */}
       {isAutoPlaying && images.length > 1 && (
         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" title="Auto-sliding" />
+          <div
+            className="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+            title="Auto-sliding"
+          />
         </div>
       )}
 
-      {/* Image Counter */}
+      {/* Counter */}
       <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {currentIndex + 1} / {images.length}
       </div>

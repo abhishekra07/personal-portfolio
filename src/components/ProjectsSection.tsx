@@ -1,116 +1,152 @@
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  ExternalLink, 
-  Github, 
-  ChevronDown, 
-  ChevronUp, 
-  Server, 
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  ExternalLink,
+  Github,
+  ChevronDown,
+  ChevronUp,
+  Server,
   Globe,
   Database,
-  Zap
-} from "lucide-react";
+  Zap,
+} from 'lucide-react';
+import ImageSlider from './ImageSlider';
 
 const ProjectsSection = () => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
   const frontendProjects = [
     {
-      title: "E-Commerce Dashboard",
-      description: "Modern admin dashboard for managing online store operations with real-time analytics.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-      demoUrl: "#",
-      githubUrl: "#",
-      features: ["Real-time analytics", "Responsive design", "Dark/light mode"]
+      title: 'E-Commerce Dashboard',
+      description:
+        'Modern admin dashboard for managing online store operations with real-time analytics.',
+      images: [
+        '/projects/Ecommerce-1.png',
+        '/projects/Ecommerce-2.png',
+        '/projects/Ecommerce-3.png',
+      ],
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
+      demoUrl: '#',
+      githubUrl: '#',
+      features: ['Real-time analytics', 'Responsive design', 'Dark/light mode'],
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with drag-and-drop interface and team features.",
-      image: "/api/placeholder/600/400",
-      technologies: ["Vue.js", "Vuetify", "Socket.io", "PWA"],
-      demoUrl: "#",
-      githubUrl: "#",
-      features: ["Real-time collaboration", "Offline support", "Mobile-first design"]
-    }
+      title: 'Task Management App',
+      description:
+        'Collaborative task management tool with drag-and-drop interface and team features.',
+      images: ['/projects/Task-Manager-1.png', '/projects/Task-Manager-2.png'],
+      technologies: ['Vue.js', 'Vuetify', 'Socket.io', 'PWA'],
+      demoUrl: '#',
+      githubUrl: '#',
+      features: [
+        'Real-time collaboration',
+        'Offline support',
+        'Mobile-first design',
+      ],
+    },
   ];
 
   const backendProjects = [
     {
-      id: "banking-api",
-      title: "Banking API System",
-      description: "Secure RESTful API for banking operations with transaction processing and account management.",
-      technologies: ["Java", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
-      githubUrl: "#",
+      id: 'banking-api',
+      title: 'Banking API System',
+      description:
+        'Secure RESTful API for banking operations with transaction processing and account management.',
+      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
+      githubUrl: '#',
       icon: Database,
       expandedContent: {
-        overview: "A comprehensive banking API system designed to handle high-volume financial transactions with enterprise-level security and compliance.",
+        overview:
+          'A comprehensive banking API system designed to handle high-volume financial transactions with enterprise-level security and compliance.',
         responsibilities: [
-          "Architected microservices for account management, transactions, and notifications",
-          "Implemented JWT-based authentication with role-based access control",
-          "Designed database schema with proper indexing for optimal performance",
-          "Integrated with third-party payment gateways and fraud detection systems"
+          'Architected microservices for account management, transactions, and notifications',
+          'Implemented JWT-based authentication with role-based access control',
+          'Designed database schema with proper indexing for optimal performance',
+          'Integrated with third-party payment gateways and fraud detection systems',
         ],
-        approach: "Built using Domain-Driven Design principles with CQRS pattern for separating read/write operations. Implemented event sourcing for audit trails and used Redis for caching frequently accessed data.",
+        approach:
+          'Built using Domain-Driven Design principles with CQRS pattern for separating read/write operations. Implemented event sourcing for audit trails and used Redis for caching frequently accessed data.',
         challenges: [
-          "Ensuring ACID compliance for financial transactions",
-          "Implementing real-time fraud detection without impacting performance",
-          "Managing distributed transactions across microservices"
+          'Ensuring ACID compliance for financial transactions',
+          'Implementing real-time fraud detection without impacting performance',
+          'Managing distributed transactions across microservices',
         ],
-        outcome: "Successfully processed over 1M transactions with 99.9% uptime and sub-200ms response times. Reduced operational costs by 30% through automated processes."
-      }
+        outcome:
+          'Successfully processed over 1M transactions with 99.9% uptime and sub-200ms response times. Reduced operational costs by 30% through automated processes.',
+      },
     },
     {
-      id: "event-streaming",
-      title: "Event Streaming Platform",
-      description: "High-throughput event streaming platform using Apache Kafka for real-time data processing.",
-      technologies: ["Java", "Spring Boot", "Apache Kafka", "MongoDB", "Kubernetes"],
-      githubUrl: "#",
+      id: 'event-streaming',
+      title: 'Event Streaming Platform',
+      description:
+        'High-throughput event streaming platform using Apache Kafka for real-time data processing.',
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'Apache Kafka',
+        'MongoDB',
+        'Kubernetes',
+      ],
+      githubUrl: '#',
       icon: Zap,
       expandedContent: {
-        overview: "A scalable event streaming platform designed to handle millions of events per second with guaranteed delivery and exactly-once processing semantics.",
+        overview:
+          'A scalable event streaming platform designed to handle millions of events per second with guaranteed delivery and exactly-once processing semantics.',
         responsibilities: [
-          "Designed event schema and partitioning strategy for optimal throughput",
-          "Implemented consumer groups with automatic failover and rebalancing",
-          "Built monitoring dashboard for tracking message lag and throughput",
-          "Created data pipeline for ETL operations and analytics"
+          'Designed event schema and partitioning strategy for optimal throughput',
+          'Implemented consumer groups with automatic failover and rebalancing',
+          'Built monitoring dashboard for tracking message lag and throughput',
+          'Created data pipeline for ETL operations and analytics',
         ],
-        approach: "Utilized Kafka Streams for stateful stream processing and implemented the Saga pattern for managing distributed transactions. Used Schema Registry for evolution of event schemas.",
+        approach:
+          'Utilized Kafka Streams for stateful stream processing and implemented the Saga pattern for managing distributed transactions. Used Schema Registry for evolution of event schemas.',
         challenges: [
-          "Handling backpressure during traffic spikes",
-          "Ensuring message ordering across partitions",
-          "Implementing exactly-once semantics without performance degradation"
+          'Handling backpressure during traffic spikes',
+          'Ensuring message ordering across partitions',
+          'Implementing exactly-once semantics without performance degradation',
         ],
-        outcome: "Platform processes 5M+ events daily with 99.99% availability. Reduced data processing latency from hours to seconds, enabling real-time business decisions."
-      }
+        outcome:
+          'Platform processes 5M+ events daily with 99.99% availability. Reduced data processing latency from hours to seconds, enabling real-time business decisions.',
+      },
     },
     {
-      id: "ml-pipeline",
-      title: "ML Model Pipeline",
-      description: "Automated machine learning pipeline for model training, validation, and deployment.",
-      technologies: ["Java", "Spring Boot", "Python", "Docker", "Jenkins", "AWS"],
-      githubUrl: "#",
+      id: 'ml-pipeline',
+      title: 'ML Model Pipeline',
+      description:
+        'Automated machine learning pipeline for model training, validation, and deployment.',
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'Python',
+        'Docker',
+        'Jenkins',
+        'AWS',
+      ],
+      githubUrl: '#',
       icon: Server,
       expandedContent: {
-        overview: "End-to-end machine learning pipeline that automates the entire ML lifecycle from data ingestion to model deployment and monitoring.",
+        overview:
+          'End-to-end machine learning pipeline that automates the entire ML lifecycle from data ingestion to model deployment and monitoring.',
         responsibilities: [
-          "Built REST APIs for model inference with auto-scaling capabilities",
-          "Implemented data validation and preprocessing pipelines",
-          "Created model versioning and A/B testing framework",
-          "Designed monitoring system for model drift detection"
+          'Built REST APIs for model inference with auto-scaling capabilities',
+          'Implemented data validation and preprocessing pipelines',
+          'Created model versioning and A/B testing framework',
+          'Designed monitoring system for model drift detection',
         ],
-        approach: "Adopted MLOps practices with CI/CD pipelines for model deployment. Used containerization for consistent environments and implemented blue-green deployment strategy.",
+        approach:
+          'Adopted MLOps practices with CI/CD pipelines for model deployment. Used containerization for consistent environments and implemented blue-green deployment strategy.',
         challenges: [
-          "Managing different model versions in production",
-          "Handling varying data schemas and feature engineering",
-          "Implementing real-time model performance monitoring"
+          'Managing different model versions in production',
+          'Handling varying data schemas and feature engineering',
+          'Implementing real-time model performance monitoring',
         ],
-        outcome: "Reduced model deployment time from weeks to hours. Achieved 95% model accuracy with automated retraining when performance degrades."
-      }
-    }
+        outcome:
+          'Reduced model deployment time from weeks to hours. Achieved 95% model accuracy with automated retraining when performance degrades.',
+      },
+    },
   ];
 
   const toggleProject = (projectId: string) => {
@@ -125,7 +161,8 @@ const ProjectsSection = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my technical expertise across frontend and backend development
+            A showcase of my technical expertise across frontend and backend
+            development
           </p>
         </div>
 
@@ -144,19 +181,21 @@ const ProjectsSection = () => {
           <TabsContent value="frontend">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {frontendProjects.map((project, index) => (
-                <Card 
-                  key={project.title} 
+                <Card
+                  key={project.title}
                   className="group hover:shadow-medium transition-all duration-300 animate-fade-in"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
-                    <div className="w-full h-full bg-gradient-secondary flex items-center justify-center">
-                      <Globe className="h-16 w-16 text-muted-foreground" />
-                    </div>
+                  <div className="aspect-video rounded-t-lg overflow-hidden">
+                    <ImageSlider images={project.images} alt="Images" />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
-                    <p className="text-muted-foreground">{project.description}</p>
+                    <CardTitle className="text-xl font-semibold">
+                      {project.title}
+                    </CardTitle>
+                    <p className="text-muted-foreground">
+                      {project.description}
+                    </p>
                   </CardHeader>
                   <CardContent>
                     <div className="mb-4">
@@ -170,13 +209,21 @@ const ProjectsSection = () => {
                     </div>
                     <div className="flex gap-3">
                       <Button size="sm" variant="outline" asChild>
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="h-4 w-4 mr-2" />
                           Live Demo
                         </a>
                       </Button>
                       <Button size="sm" variant="outline" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="h-4 w-4 mr-2" />
                           Code
                         </a>
@@ -191,8 +238,8 @@ const ProjectsSection = () => {
           <TabsContent value="backend">
             <div className="space-y-6">
               {backendProjects.map((project, index) => (
-                <Card 
-                  key={project.id} 
+                <Card
+                  key={project.id}
                   className="hover:shadow-medium transition-all duration-300 animate-fade-in"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
@@ -203,8 +250,12 @@ const ProjectsSection = () => {
                           <project.icon className="h-6 w-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
-                          <p className="text-muted-foreground mt-1">{project.description}</p>
+                          <CardTitle className="text-xl font-semibold">
+                            {project.title}
+                          </CardTitle>
+                          <p className="text-muted-foreground mt-1">
+                            {project.description}
+                          </p>
                         </div>
                       </div>
                       <Button
@@ -231,7 +282,11 @@ const ProjectsSection = () => {
                         ))}
                       </div>
                       <Button size="sm" variant="outline" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="h-4 w-4 mr-2" />
                           View Code
                         </a>
@@ -241,36 +296,56 @@ const ProjectsSection = () => {
                     {expandedProject === project.id && (
                       <div className="mt-6 space-y-6 border-t border-border pt-6 animate-fade-in">
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2">Project Overview</h4>
-                          <p className="text-muted-foreground">{project.expandedContent.overview}</p>
+                          <h4 className="font-semibold text-foreground mb-2">
+                            Project Overview
+                          </h4>
+                          <p className="text-muted-foreground">
+                            {project.expandedContent.overview}
+                          </p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2">My Responsibilities</h4>
+                          <h4 className="font-semibold text-foreground mb-2">
+                            My Responsibilities
+                          </h4>
                           <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                            {project.expandedContent.responsibilities.map((resp, idx) => (
-                              <li key={idx}>{resp}</li>
-                            ))}
+                            {project.expandedContent.responsibilities.map(
+                              (resp, idx) => (
+                                <li key={idx}>{resp}</li>
+                              )
+                            )}
                           </ul>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2">Technical Approach</h4>
-                          <p className="text-muted-foreground">{project.expandedContent.approach}</p>
+                          <h4 className="font-semibold text-foreground mb-2">
+                            Technical Approach
+                          </h4>
+                          <p className="text-muted-foreground">
+                            {project.expandedContent.approach}
+                          </p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2">Challenges & Solutions</h4>
+                          <h4 className="font-semibold text-foreground mb-2">
+                            Challenges & Solutions
+                          </h4>
                           <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                            {project.expandedContent.challenges.map((challenge, idx) => (
-                              <li key={idx}>{challenge}</li>
-                            ))}
+                            {project.expandedContent.challenges.map(
+                              (challenge, idx) => (
+                                <li key={idx}>{challenge}</li>
+                              )
+                            )}
                           </ul>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-foreground mb-2">Outcome & Impact</h4>
-                          <p className="text-muted-foreground">{project.expandedContent.outcome}</p>
+                          <h4 className="font-semibold text-foreground mb-2">
+                            Outcome & Impact
+                          </h4>
+                          <p className="text-muted-foreground">
+                            {project.expandedContent.outcome}
+                          </p>
                         </div>
                       </div>
                     )}
