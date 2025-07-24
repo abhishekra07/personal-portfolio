@@ -8,11 +8,6 @@ const SkillsSection = () => {
 
   const categories = [
     {
-      id: 'all',
-      label: 'All',
-      count: Object.values(portfolioData.skills).flat().length,
-    },
-    {
       id: 'backend',
       label: 'Backend',
       count: portfolioData.skills.backend.length,
@@ -49,8 +44,6 @@ const SkillsSection = () => {
       ] || []
     );
   };
-
-  const filteredSkills = getFilteredSkills();
 
   return (
     <section id="skills" className="py-20 bg-gradient-secondary">

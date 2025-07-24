@@ -28,7 +28,7 @@ const ContactSection = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    /* e.preventDefault();
     setIsSubmitting(true);
 
     // Simulate form submission
@@ -39,7 +39,15 @@ const ContactSection = () => {
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
-    }, 1000);
+    }, 1000); */
+
+    e.preventDefault();
+    toast({
+      title: 'Coming Soon!',
+      description: `The contact form is not active yet. Please email me directly at ${portfolioData.personal.email}.`,
+      variant: 'default',
+      duration: 6000,
+    });
   };
 
   const contactInfo = [

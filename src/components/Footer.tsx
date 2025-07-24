@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-2">Portfolio</h3>
+            <h3 className="text-xl font-bold mb-2">Abhishek's Portfolio</h3>
             <p className="text-primary-foreground/80">
               Building digital solutions that make a difference
             </p>

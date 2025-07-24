@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
-import { portfolioData } from "@/data/portfolio";
-import { downloadResume } from "@/utils/resumeDownload";
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { portfolioData } from '@/data/portfolio';
+import { downloadResume } from '@/utils/resumeDownload';
 
 const HeroSection = () => {
   const scrollToSection = (href: string) => {
@@ -12,7 +12,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero text-primary-foreground">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-gradient-hero text-primary-foreground"
+    >
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -25,8 +28,8 @@ const HeroSection = () => {
           </div>
 
           <div className="animate-fade-in animation-delay-200 flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
               onClick={() => scrollToSection('#projects')}
               className="group"
@@ -34,8 +37,8 @@ const HeroSection = () => {
               View My Work
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="bg-white/10 border-white/20 hover:bg-white/20 text-white"
               onClick={downloadResume}
@@ -46,26 +49,26 @@ const HeroSection = () => {
           </div>
 
           <div className="animate-fade-in animation-delay-400 flex justify-center space-x-6">
-            <a 
+            <a
               href={portfolioData.social.github}
               target="_blank"
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="GitHub"
             >
               <Github className="h-6 w-6" />
             </a>
-            <a 
+            <a
               href={portfolioData.social.linkedin}
               target="_blank"
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
             </a>
-            <a 
-              href={portfolioData.social.email}
+            <a
+              href={`mailto:${portfolioData.social.email}`}
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 hover:scale-110"
               aria-label="Email"
             >

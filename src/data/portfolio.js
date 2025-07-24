@@ -31,7 +31,14 @@ import SocketioOriginal from 'devicons-react/icons/SocketioOriginal';
 import HibernateOriginal from 'devicons-react/icons/HibernateOriginal';
 import GooglecloudOriginal from 'devicons-react/icons/GooglecloudOriginal';
 
-import { Server, Database, Zap } from 'lucide-react';
+import {
+  Server,
+  Database,
+  Zap,
+  BotIcon,
+  ServerIcon,
+  TrophyIcon,
+} from 'lucide-react';
 
 // Portfolio Configuration Data
 export const portfolioData = {
@@ -133,7 +140,7 @@ export const portfolioData = {
       title: 'Associate Staff Engineer',
       company: 'Nagarro',
       location: 'India',
-      period: 'Mar 2022 – Feb 2025',
+      period: 'Mar 2022 – July 2025',
       type: 'Full-time',
       description:
         'Led and contributed to multiple enterprise-level backend systems with a focus on microservices and distributed architecture.',
@@ -211,60 +218,7 @@ export const portfolioData = {
   // Projects
   projects: [
     {
-      id: 4,
-      title: 'Voice Assistant News App',
-      description:
-        'A React-based voice-controlled news app using Alan AI for searching and reading news aloud.',
-      longDescription:
-        'Users can use voice commands to interact with the app for reading news based on keywords, channels, or sources. Enhances accessibility and hands-free interaction using Alan AI voice assistant.',
-      images: [],
-      technologies: ['ReactJS', 'Alan AI', 'JavaScript'],
-      features: [
-        'Voice-controlled search',
-        'Live news updates',
-        'Accessible UI',
-      ],
-      githubUrl: 'https://github.com/abhishekra07',
-      liveUrl: '',
-      status: 'Completed',
-    },
-    {
-      id: 5,
-      title: 'Income-Expense Tracker',
-      description:
-        'React-based app to track income and expenses with category-wise filtering and visual analysis.',
-      longDescription:
-        'The tracker supports adding income/expenses, categorizing them with hashtags, and shows ratio-based analysis using charts and modern UI components.',
-      images: [],
-      technologies: ['ReactJS', 'Material UI', 'JavaScript'],
-      features: [
-        'Category-based tracking',
-        'Hashtag tagging',
-        'Expense analysis UI',
-      ],
-      githubUrl: 'https://github.com/abhishekra07',
-      liveUrl: '',
-      status: 'Completed',
-    },
-    {
-      id: 6,
-      title: 'Wildfire Tracker',
-      description:
-        'A React app that integrates NASA EONET API to visualize wildfire data on Google Maps.',
-      longDescription:
-        'This real-time wildfire tracker fetches incident data using NASA EONET APIs and marks their geolocation on Google Maps to help users track wildfire spread.',
-      images: [],
-      technologies: ['ReactJS', 'Google Maps API', 'NASA EONET API'],
-      features: [
-        'Real-time wildfire data',
-        'Google Maps integration',
-        'Marker visualization',
-      ],
-      githubUrl: 'https://github.com/abhishekra07',
-      liveUrl: '',
-      status: 'Completed',
-    },
-    {
+      id: 'simply-minds',
       title: 'Simply Minds',
       description:
         'Inventory management system allowing users to manage, track, and analyze stock efficiently.',
@@ -283,6 +237,7 @@ export const portfolioData = {
       ],
     },
     {
+      id: 'logi-truck',
       title: 'Logi Truck',
       description:
         'Logistics management platform designed to handle transportation fleet and operational tasks.',
@@ -297,6 +252,7 @@ export const portfolioData = {
       features: ['Fleet tracking', 'Task scheduling', 'Freelancer-friendly UI'],
     },
     {
+      id: 'tee-craft',
       title: 'TeeCraft',
       description:
         'Interactive t-shirt designer that lets users add logos, stickers, and text, and download the final design.',
@@ -315,105 +271,159 @@ export const portfolioData = {
         'Downloadable high-quality output',
       ],
     },
+    {
+      id: 4,
+      title: 'Voice Assistant News App',
+      description:
+        'A React-based voice-controlled news app using Alan AI for searching and reading news aloud.',
+      longDescription:
+        'Users can use voice commands to interact with the app for reading news based on keywords, channels, or sources. Enhances accessibility and hands-free interaction using Alan AI voice assistant.',
+      images: [],
+      technologies: ['ReactJS', 'Alan AI', 'JavaScript'],
+      features: [
+        'Voice-controlled search',
+        'Live news updates',
+        'Accessible UI',
+      ],
+      githubUrl: 'https://github.com/abhishekra07/Voice-Assistant-News-App',
+      liveUrl: '',
+      status: 'Completed',
+    },
+    {
+      id: 5,
+      title: 'Income-Expense Tracker',
+      description:
+        'React-based app to track income and expenses with category-wise filtering and visual analysis.',
+      longDescription:
+        'The tracker supports adding income/expenses, categorizing them with hashtags, and shows ratio-based analysis using charts and modern UI components.',
+      images: [],
+      technologies: ['ReactJS', 'Material UI', 'JavaScript'],
+      features: [
+        'Category-based tracking',
+        'Hashtag tagging',
+        'Expense analysis UI',
+      ],
+      githubUrl: 'https://github.com/abhishekra07/income-expense-tracker',
+      liveUrl: '',
+      status: 'Completed',
+    },
+    {
+      id: 6,
+      title: 'Wildfire Tracker',
+      description:
+        'A React app that integrates NASA EONET API to visualize wildfire data on Google Maps.',
+      longDescription:
+        'This real-time wildfire tracker fetches incident data using NASA EONET APIs and marks their geolocation on Google Maps to help users track wildfire spread.',
+      images: [],
+      technologies: ['ReactJS', 'Google Maps API', 'NASA EONET API'],
+      features: [
+        'Real-time wildfire data',
+        'Google Maps integration',
+        'Marker visualization',
+      ],
+      githubUrl: 'https://github.com/abhishekra07/wildfire-tracker',
+      liveUrl: '',
+      status: 'Completed',
+    },
   ],
 
-  //Backend Projects
+  // Backend Projects
   backend: [
     {
-      id: 'banking-api',
-      title: 'Banking API System',
+      id: 'therapy-chat-assistant',
+      title: 'AI-Powered Therapy Support Chat System',
       description:
-        'Secure RESTful API for banking operations with transaction processing and account management.',
-      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
+        'Voice and text-based chat system to assist dialysis patients using AI-driven summarization and response generation.',
+      technologies: [
+        'Node.js',
+        'LangChain',
+        'OpenAI',
+        'Google Cloud',
+        'TypeScript',
+      ],
       githubUrl: '#',
-      icon: Database,
+      icon: BotIcon, // use appropriate icon
       expandedContent: {
         overview:
-          'A comprehensive banking API system designed to handle high-volume financial transactions with enterprise-level security and compliance.',
+          'Developed a personalized chat assistant for a dialysis therapy platform where users could upload post-session summaries and ask questions in natural language.',
         responsibilities: [
-          'Architected microservices for account management, transactions, and notifications',
-          'Implemented JWT-based authentication with role-based access control',
-          'Designed database schema with proper indexing for optimal performance',
-          'Integrated with third-party payment gateways and fraud detection systems',
+          'Integrated LangChain with OpenAI to enable document-aware conversation support.',
+          'Implemented Google Cloud Text-to-Speech and Speech-to-Text APIs for voice-based interactions.',
+          'Enabled summarization, red-flag detection, and explanation of medical terms in layman language.',
+          'Supported both real-time and follow-up Q&A through document embeddings and vector search.',
         ],
         approach:
-          'Built using Domain-Driven Design principles with CQRS pattern for separating read/write operations. Implemented event sourcing for audit trails and used Redis for caching frequently accessed data.',
+          'Used document loaders and vector storage to provide relevant context to LLM. Ensured secure handling of user health data.',
         challenges: [
-          'Ensuring ACID compliance for financial transactions',
-          'Implementing real-time fraud detection without impacting performance',
-          'Managing distributed transactions across microservices',
+          'Handling large and unstructured user-uploaded therapy summaries.',
+          'Maintaining conversation relevance across context windows.',
+          'Building an intuitive interface for non-technical patients.',
         ],
         outcome:
-          'Successfully processed over 1M transactions with 99.9% uptime and sub-200ms response times. Reduced operational costs by 30% through automated processes.',
+          'Enabled non-clinical users to understand and engage with their therapy data, improving follow-up adherence by 40%.',
       },
     },
     {
-      id: 'event-streaming',
-      title: 'Event Streaming Platform',
+      id: 'clinic-microservices',
+      title: 'Clinic Platform Microservices System',
       description:
-        'High-throughput event streaming platform using Apache Kafka for real-time data processing.',
+        'Microservices-based backend architecture for clinic platform with Kafka-based communication and document generation.',
       technologies: [
         'Java',
         'Spring Boot',
         'Apache Kafka',
-        'MongoDB',
-        'Kubernetes',
+        'PostgreSQL',
+        'Docker',
       ],
       githubUrl: '#',
-      icon: Zap,
+      icon: ServerIcon,
       expandedContent: {
         overview:
-          'A scalable event streaming platform designed to handle millions of events per second with guaranteed delivery and exactly-once processing semantics.',
+          'Designed and implemented scalable backend services for a clinic platform, focusing on modularity, event-driven design, and automation.',
         responsibilities: [
-          'Designed event schema and partitioning strategy for optimal throughput',
-          'Implemented consumer groups with automatic failover and rebalancing',
-          'Built monitoring dashboard for tracking message lag and throughput',
-          'Created data pipeline for ETL operations and analytics',
+          'Developed secure authentication and authorization service for multi-role access.',
+          'Designed microservices architecture supporting asynchronous Kafka communication.',
+          'Built PDF document generation service using Puppeteer for dynamic clinical reports.',
+          'Implemented batch log processing for therapy device data using Kafka consumers.',
+          'Led schema design and DevOps setup for CI/CD and production deployments.',
         ],
         approach:
-          'Utilized Kafka Streams for stateful stream processing and implemented the Saga pattern for managing distributed transactions. Used Schema Registry for evolution of event schemas.',
+          'Used event-driven design with Kafka for loose coupling. Adopted REST APIs with token-based security. Built async task workers for heavy processing.',
         challenges: [
-          'Handling backpressure during traffic spikes',
-          'Ensuring message ordering across partitions',
-          'Implementing exactly-once semantics without performance degradation',
+          'Coordinating distributed microservices for real-time user workflows.',
+          'Designing extensible data models for evolving medical data schemas.',
+          'Implementing secure document storage and access.',
         ],
         outcome:
-          'Platform processes 5M+ events daily with 99.99% availability. Reduced data processing latency from hours to seconds, enabling real-time business decisions.',
+          'Successfully supported onboarding of multiple clinics and thousands of therapy logs per day. Reduced support overhead with automated log reports.',
       },
     },
     {
-      id: 'ml-pipeline',
-      title: 'ML Model Pipeline',
+      id: 'fantasy-cricket-platform',
+      title: 'Fantasy Cricket App Backend (Dream11 Clone)',
       description:
-        'Automated machine learning pipeline for model training, validation, and deployment.',
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'Python',
-        'Docker',
-        'Jenkins',
-        'AWS',
-      ],
+        'Backend system replicating key features of fantasy sports apps like Dream11 with user engagement and scoring modules.',
+      technologies: ['Node.js', 'Express', 'MongoDB', 'Redis', 'JWT'],
       githubUrl: '#',
-      icon: Server,
+      icon: TrophyIcon, // Choose a trophy or sports icon
       expandedContent: {
         overview:
-          'End-to-end machine learning pipeline that automates the entire ML lifecycle from data ingestion to model deployment and monitoring.',
+          'Built a fantasy sports backend that allowed users to register, create teams for live matches, and track scores based on real-time updates.',
         responsibilities: [
-          'Built REST APIs for model inference with auto-scaling capabilities',
-          'Implemented data validation and preprocessing pipelines',
-          'Created model versioning and A/B testing framework',
-          'Designed monitoring system for model drift detection',
+          'Created user registration, authentication, and team-building APIs.',
+          'Integrated match schedule and player stats ingestion pipeline.',
+          'Handled live scoring updates with Redis-based caching for scalability.',
+          'Implemented leaderboard calculation and prize distribution logic.',
         ],
         approach:
-          'Adopted MLOps practices with CI/CD pipelines for model deployment. Used containerization for consistent environments and implemented blue-green deployment strategy.',
+          'Designed RESTful services using Express, with Redis to minimize latency during peak traffic. Adopted modular service structure for easy future extension.',
         challenges: [
-          'Managing different model versions in production',
-          'Handling varying data schemas and feature engineering',
-          'Implementing real-time model performance monitoring',
+          'Simulating real-time updates and point calculations accurately.',
+          'Preventing cheating or score tampering with strict validations.',
+          'Handling concurrent requests during match start times.',
         ],
         outcome:
-          'Reduced model deployment time from weeks to hours. Achieved 95% model accuracy with automated retraining when performance degrades.',
+          'Delivered a fully working fantasy app prototype used by internal stakeholders for demo and testing. Scaled to handle 10k+ user actions per match.',
       },
     },
   ],

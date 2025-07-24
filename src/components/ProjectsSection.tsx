@@ -10,8 +10,6 @@ import {
   ChevronUp,
   Server,
   Globe,
-  Database,
-  Zap,
 } from 'lucide-react';
 import ImageSlider from './ImageSlider';
 import { portfolioData } from '@/data/portfolio';
@@ -78,16 +76,19 @@ const ProjectsSection = () => {
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Button size="sm" variant="outline" asChild>
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
+                      {/* Conditionally show Live Demo button only if liveUrl exists */}
+                      {project.liveUrl && (
+                        <Button size="sm" variant="outline" asChild>
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
                       <Button size="sm" variant="outline" asChild>
                         <a
                           href={project.githubUrl}
@@ -151,16 +152,18 @@ const ProjectsSection = () => {
                           </Badge>
                         ))}
                       </div>
-                      <Button size="sm" variant="outline" asChild>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Github className="h-4 w-4 mr-2" />
-                          View Code
-                        </a>
-                      </Button>
+                      {project.githubUrl && project.githubUrl !== '#' && (
+                        <Button size="sm" variant="outline" asChild>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4 mr-2" />
+                            View Code
+                          </a>
+                        </Button>
+                      )}
                     </div>
 
                     {expandedProject === project.id && (

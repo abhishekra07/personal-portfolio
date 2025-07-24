@@ -26,7 +26,7 @@ const Header = () => {
     { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
-    { href: '/blog', label: 'Blog', isExternal: true },
+    // { href: '/blog', label: 'Blog', isExternal: true },
   ];
 
   const scrollToSection = (href: string) => {
